@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
+<loc>https://sieunnnn.github.io/posts/new-post/</loc>
+<lastmod>2019-01-02T00:00:00+09:00</lastmod>
+</url>
+<url>
 <loc>https://sieunnnn.github.io/posts/text-and-typography/</loc>
 <lastmod>2019-08-08T12:33:00+09:00</lastmod>
 </url>
@@ -18,19 +22,19 @@
 </url>
 <url>
 <loc>https://sieunnnn.github.io/categories/</loc>
-<lastmod>2025-02-03T00:02:48+09:00</lastmod>
+<lastmod>2025-02-03T00:36:29+09:00</lastmod>
 </url>
 <url>
 <loc>https://sieunnnn.github.io/tags/</loc>
-<lastmod>2025-02-03T00:02:48+09:00</lastmod>
+<lastmod>2025-02-03T00:36:29+09:00</lastmod>
 </url>
 <url>
 <loc>https://sieunnnn.github.io/archives/</loc>
-<lastmod>2025-02-03T00:02:48+09:00</lastmod>
+<lastmod>2025-02-03T00:36:29+09:00</lastmod>
 </url>
 <url>
 <loc>https://sieunnnn.github.io/about/</loc>
-<lastmod>2025-02-03T00:02:48+09:00</lastmod>
+<lastmod>2025-02-03T00:36:29+09:00</lastmod>
 </url>
 <url>
 <loc>https://sieunnnn.github.io/about/</loc>
