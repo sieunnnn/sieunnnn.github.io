@@ -204,15 +204,13 @@
   <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-87L9Q0GN2M"></script>
 <script>
-  document.addEventListener('DOMContentLoaded', () => {
-    window.dataLayer = window.dataLayer || [];
-    function gtag() {
-      dataLayer.push(arguments);
-    }
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){
+    dataLayer.push(arguments);
+  }
+  gtag('js', new Date());
 
-    gtag('js', new Date());
-    gtag('config', 'G-87L9Q0GN2M');
-  });
+  gtag('config', 'G-87L9Q0GN2M');
 </script>
 
 
