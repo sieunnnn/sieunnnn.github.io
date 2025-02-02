@@ -4,7 +4,7 @@
   <id>https://sieunnnn.github.io/</id>
   <title>김자바의 개발일지</title>
   <subtitle>개발 하면서 학습한 내용을 정리하고 공유하기 위한 블로그 입니다.</subtitle>
-  <updated>2025-02-03T00:36:29+09:00</updated>
+  <updated>2025-02-03T00:43:48+09:00</updated>
   <author>
     <name>SIEUNKIM</name>
     <uri>https://sieunnnn.github.io/</uri>
@@ -124,23 +124,27 @@
 
   
   <entry>
-    <title>New Post</title>
-    <link href="https://sieunnnn.github.io/posts/new-post/" rel="alternate" type="text/html" title="New Post" />
-    <published>2019-01-02T00:00:00+09:00</published>
+    <title>처음으로 만들어본 글</title>
+    <link href="https://sieunnnn.github.io/posts/new-post/" rel="alternate" type="text/html" title="처음으로 만들어본 글" />
+    <published>2019-08-08T12:33:00+09:00</published>
   
-    <updated>2019-01-02T00:00:00+09:00</updated>
+    <updated>2019-08-08T12:33:00+09:00</updated>
   
     <id>https://sieunnnn.github.io/posts/new-post/</id>
     <content type="text/html" src="https://sieunnnn.github.io/posts/new-post/" />
     <author>
-      <name>SIEUNKIM</name>
+      <name>cotes</name>
     </author>
 
   
     
+    <category term="Blogging" />
+    
+    <category term="Demo" />
+    
   
 
-  <summary></summary>
+  <summary>Examples of text, typography, math equations, diagrams, flowcharts, pictures, videos, and more.</summary>
 
   </entry>
 

@@ -32,12 +32,12 @@
     "content": "Examples of text, typography, math equations, diagrams, flowcharts, pictures, videos, and more."
   },
   {
-    "title": "New Post",
+    "title": "처음으로 만들어본 글",
     "url": "/posts/new-post/",
-    "categories": "",
-    "tags": "",
-    "date": "2019-01-02 00:00:00 +0900",
-    "content": ""
+    "categories": "Blogging, Demo",
+    "tags": "typography",
+    "date": "2019-08-08 12:33:00 +0900",
+    "content": "Examples of text, typography, math equations, diagrams, flowcharts, pictures, videos, and more."
   }
   
 ]
