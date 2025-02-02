@@ -6,16 +6,16 @@
   "description": "개발 하면서 학습한 내용을 정리하고 공유하기 위한 블로그 입니다.",
   "icons": [
     {
-      "src": "http://localhost:4000/assets/img/favicons/android-chrome-192x192.png",
+      "src": "{{ site.baseurl }}/assets/img/favicons | absolute_url/android-chrome-192x192.png",
       "sizes": "192x192",
       "type": "image/png"
     },
     {
-      "src": "http://localhost:4000/assets/img/favicons/android-chrome-512x512.png",
+      "src": "{{ site.baseurl }}/assets/img/favicons | absolute_url/android-chrome-512x512.png",
       "sizes": "512x512",
       "type": "image/png"
     }],
-  "start_url": "http://localhost:4000/index.html",
+  "start_url": "/index.html",
   "theme_color": "#2a1e6b",
   "background_color": "#ffffff",
   "display": "fullscreen"
