@@ -8,7 +8,7 @@ echo "⬆️ git add 중..."
 git add .
 
 echo "✍️ 커밋 메시지 입력 중..."
-git commit -m "🚀 게시글 자동배포: $(date '+%Y-%m-%d %H:%M:%S')"
+git commit -m "🚀 수정본 자동배포: $(date '+%Y-%m-%d %H:%M:%S')"
 
 echo "🌍 GitHub로 푸시 중..."
 git push origin main
