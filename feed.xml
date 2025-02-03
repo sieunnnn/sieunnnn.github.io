@@ -4,7 +4,7 @@
   <id>https://sieunnnn.github.io/</id>
   <title>김자바의 개발일지</title>
   <subtitle>개발 하면서 학습한 내용을 정리하고 공유하기 위한 블로그 입니다.</subtitle>
-  <updated>2025-02-03T17:50:49+09:00</updated>
+  <updated>2025-02-04T01:18:12+09:00</updated>
   <author>
     <name>SIEUNKIM</name>
     <uri>https://sieunnnn.github.io/</uri>
@@ -17,6 +17,50 @@
   <icon>/assets/img/favicons/favicon.ico</icon>
   <logo>/assets/img/favicons/favicon-96x96.png</logo>
 
+
+  
+  <entry>
+    <title></title>
+    <link href="https://sieunnnn.github.io/posts/2024-04-18-setter-builder-jackson/" rel="alternate" type="text/html" title="" />
+    <published>2025-02-04T01:18:12+09:00</published>
+  
+    <updated>2025-02-04T01:18:12+09:00</updated>
+  
+    <id>https://sieunnnn.github.io/posts/2024-04-18-setter-builder-jackson/</id>
+    <content type="text/html" src="https://sieunnnn.github.io/posts/2024-04-18-setter-builder-jackson/" />
+    <author>
+      <name>SIEUNKIM</name>
+    </author>
+
+  
+    
+  
+
+  <summary>1. 문제의 시작 @Setter 를 지우고 빌더 패턴을 적용하면서 아래와 같은 에러들이 발생하였습니다.  org.springframework.messaging.converter.MessageConversionException: Could not read JSON: Cannot construct instance of travelplanner.project.demo.planner.dto.request.CalendarCreateRequest (although at least one Creator exists): cannot deserialize from Object value (no delegate- or property-based Creator)  at [Source: (byte[])&amp;quot;{&amp;quot;dateTitle...</summary>
+
+  </entry>
+
+  
+  <entry>
+    <title></title>
+    <link href="https://sieunnnn.github.io/posts/2023-09-17-send-find-password-mail/" rel="alternate" type="text/html" title="" />
+    <published>2025-02-04T01:18:12+09:00</published>
+  
+    <updated>2025-02-04T01:18:12+09:00</updated>
+  
+    <id>https://sieunnnn.github.io/posts/2023-09-17-send-find-password-mail/</id>
+    <content type="text/html" src="https://sieunnnn.github.io/posts/2023-09-17-send-find-password-mail/" />
+    <author>
+      <name>SIEUNKIM</name>
+    </author>
+
+  
+    
+  
+
+  <summary>1. 비밀번호를 잊어버린 유저는 어떻게 해야 하나요?  일반적으로 메일로 임시 비밀번호를 발급해줍니다.  하지만 임시 비밀번호를 발급받게 된다면, 저희팀 프로젝트 비밀번호 변경 프로세스상 로그인을 하고 프로필에 들어가서 임시비밀번호를 입력하고 새 비밀번호로 교체 해야합니다. 그러면 유저입장에서는 너무 귀찮겠죠.  그래서 비밀번호를 변경할 수 있는 url 을 이메일로 전송하고 그 url 을 클릭하면 비밀번호를 바꿀 수 있는 창을 띄우도록 서비스 로직을 세웠습니다.     2. 비밀번호 변경 서비스 로직  처음에는 비밀번호 수정을 원할 경우, 이메일을 입력시 해당 이메일에 임시 비밀번호를 발송하고, 이를 DB에서 수정하는 것으로 생각했습니다. 하지만 저희 웹 특성상 개인정보를 받는 것이 이메일 밖에 없기 ...</summary>
+
+  </entry>
 
   
   <entry>
@@ -93,58 +137,6 @@
   
 
   <summary>왜 User 는 Optional 로 casting 될 수 없는걸까. 그냥 해주면 안되는걸까.</summary>
-
-  </entry>
-
-  
-  <entry>
-    <title>Form Login 방식으로 로그인 처리하기</title>
-    <link href="https://sieunnnn.github.io/posts/form-login/" rel="alternate" type="text/html" title="Form Login 방식으로 로그인 처리하기" />
-    <published>2023-05-24T12:33:00+09:00</published>
-  
-    <updated>2023-05-24T12:33:00+09:00</updated>
-  
-    <id>https://sieunnnn.github.io/posts/form-login/</id>
-    <content type="text/html" src="https://sieunnnn.github.io/posts/form-login/" />
-    <author>
-      <name>sieunnnn</name>
-    </author>
-
-  
-    
-    <category term="로그인" />
-    
-    <category term="form login" />
-    
-  
-
-  <summary>form login 방식으로 로그인을 하는 방법을 알아보자.</summary>
-
-  </entry>
-
-  
-  <entry>
-    <title>Customize the Favicon</title>
-    <link href="https://sieunnnn.github.io/posts/customize-the-favicon/" rel="alternate" type="text/html" title="Customize the Favicon" />
-    <published>2019-08-11T01:34:00+09:00</published>
-  
-    <updated>2019-08-11T01:34:00+09:00</updated>
-  
-    <id>https://sieunnnn.github.io/posts/customize-the-favicon/</id>
-    <content type="text/html" src="https://sieunnnn.github.io/posts/customize-the-favicon/" />
-    <author>
-      <name>cotes</name>
-    </author>
-
-  
-    
-    <category term="Blogging" />
-    
-    <category term="Tutorial" />
-    
-  
-
-  <summary>The favicons of Chirpy are placed in the directory assets/img/favicons/. You may want to replace them with your own. The following sections will guide you to create and replace the default favicons.  Generate the favicon  Prepare a square image (PNG, JPG, or SVG) with a size of 512x512 or more, and then go to the online tool Real Favicon Generator and click the button Select your Favicon image ...</summary>
 
   </entry>
 
