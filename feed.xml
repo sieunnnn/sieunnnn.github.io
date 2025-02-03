@@ -4,7 +4,7 @@
   <id>https://sieunnnn.github.io/</id>
   <title>김자바의 개발일지</title>
   <subtitle>개발 하면서 학습한 내용을 정리하고 공유하기 위한 블로그 입니다.</subtitle>
-  <updated>2025-02-03T03:18:35+09:00</updated>
+  <updated>2025-02-03T17:36:01+09:00</updated>
   <author>
     <name>SIEUNKIM</name>
     <uri>https://sieunnnn.github.io/</uri>
@@ -17,6 +17,110 @@
   <icon>/assets/img/favicons/favicon.ico</icon>
   <logo>/assets/img/favicons/favicon-96x96.png</logo>
 
+
+  
+  <entry>
+    <title>DefaultHandlerExceptionResolver</title>
+    <link href="https://sieunnnn.github.io/posts/default-handler-exception-resolver/" rel="alternate" type="text/html" title="DefaultHandlerExceptionResolver" />
+    <published>2023-12-07T12:33:00+09:00</published>
+  
+    <updated>2023-12-07T12:33:00+09:00</updated>
+  
+    <id>https://sieunnnn.github.io/posts/default-handler-exception-resolver/</id>
+    <content type="text/html" src="https://sieunnnn.github.io/posts/default-handler-exception-resolver/" />
+    <author>
+      <name>sieunnnn</name>
+    </author>
+
+  
+    
+    <category term="Spring boot" />
+    
+    <category term="Exception" />
+    
+  
+
+  <summary>Required request body is missing … 이라는 문구가 나타났다면 이곳을 방문해주세요.</summary>
+
+  </entry>
+
+  
+  <entry>
+    <title>LazyInitializationException 과 SecurityContextHolder</title>
+    <link href="https://sieunnnn.github.io/posts/lazy-initialization-exception/" rel="alternate" type="text/html" title="LazyInitializationException 과 SecurityContextHolder" />
+    <published>2023-11-20T12:33:00+09:00</published>
+  
+    <updated>2023-11-20T12:33:00+09:00</updated>
+  
+    <id>https://sieunnnn.github.io/posts/lazy-initialization-exception/</id>
+    <content type="text/html" src="https://sieunnnn.github.io/posts/lazy-initialization-exception/" />
+    <author>
+      <name>sieunnnn</name>
+    </author>
+
+  
+    
+    <category term="Spring boot" />
+    
+    <category term="Exception" />
+    
+  
+
+  <summary>누구나 한번쯤은 본다는 LazyInitializationException 🫠</summary>
+
+  </entry>
+
+  
+  <entry>
+    <title>ClassCastException - 왜 Optional 을 사용할 수 없을까?</title>
+    <link href="https://sieunnnn.github.io/posts/class-cast-exception/" rel="alternate" type="text/html" title="ClassCastException - 왜 Optional 을 사용할 수 없을까?" />
+    <published>2023-11-19T12:33:00+09:00</published>
+  
+    <updated>2023-11-19T12:33:00+09:00</updated>
+  
+    <id>https://sieunnnn.github.io/posts/class-cast-exception/</id>
+    <content type="text/html" src="https://sieunnnn.github.io/posts/class-cast-exception/" />
+    <author>
+      <name>sieunnnn</name>
+    </author>
+
+  
+    
+    <category term="Spring boot" />
+    
+    <category term="Exception" />
+    
+  
+
+  <summary>왜 User 는 Optional&amp;lt;T&amp;gt; 로 casting 될 수 없는걸까. 그냥 해주면 안되는걸까.</summary>
+
+  </entry>
+
+  
+  <entry>
+    <title>Form Login 방식으로 로그인 처리하기</title>
+    <link href="https://sieunnnn.github.io/posts/form-login/" rel="alternate" type="text/html" title="Form Login 방식으로 로그인 처리하기" />
+    <published>2023-05-24T12:33:00+09:00</published>
+  
+    <updated>2023-05-24T12:33:00+09:00</updated>
+  
+    <id>https://sieunnnn.github.io/posts/form-login/</id>
+    <content type="text/html" src="https://sieunnnn.github.io/posts/form-login/" />
+    <author>
+      <name>sieunnnn</name>
+    </author>
+
+  
+    
+    <category term="로그인" />
+    
+    <category term="form login" />
+    
+  
+
+  <summary>form login 방식으로 로그인을 하는 방법을 알아보자.</summary>
+
+  </entry>
 
   
   <entry>
@@ -41,110 +145,6 @@
   
 
   <summary>The favicons of Chirpy are placed in the directory assets/img/favicons/. You may want to replace them with your own. The following sections will guide you to create and replace the default favicons.  Generate the favicon  Prepare a square image (PNG, JPG, or SVG) with a size of 512x512 or more, and then go to the online tool Real Favicon Generator and click the button Select your Favicon image ...</summary>
-
-  </entry>
-
-  
-  <entry>
-    <title>Getting Started</title>
-    <link href="https://sieunnnn.github.io/posts/getting-started/" rel="alternate" type="text/html" title="Getting Started" />
-    <published>2019-08-09T21:55:00+09:00</published>
-  
-    <updated>2019-08-09T21:55:00+09:00</updated>
-  
-    <id>https://sieunnnn.github.io/posts/getting-started/</id>
-    <content type="text/html" src="https://sieunnnn.github.io/posts/getting-started/" />
-    <author>
-      <name>cotes</name>
-    </author>
-
-  
-    
-    <category term="Blogging" />
-    
-    <category term="Tutorial" />
-    
-  
-
-  <summary>Get started with Chirpy basics in this comprehensive overview. You will learn how to install, configure, and use your first Chirpy-based website, as well as deploy it to a web server.</summary>
-
-  </entry>
-
-  
-  <entry>
-    <title>Writing a New Post</title>
-    <link href="https://sieunnnn.github.io/posts/write-a-new-post/" rel="alternate" type="text/html" title="Writing a New Post" />
-    <published>2019-08-08T15:10:00+09:00</published>
-  
-    <updated>2019-08-08T15:10:00+09:00</updated>
-  
-    <id>https://sieunnnn.github.io/posts/write-a-new-post/</id>
-    <content type="text/html" src="https://sieunnnn.github.io/posts/write-a-new-post/" />
-    <author>
-      <name>cotes</name>
-    </author>
-
-  
-    
-    <category term="Blogging" />
-    
-    <category term="Tutorial" />
-    
-  
-
-  <summary>This tutorial will guide you how to write a post in the Chirpy template, and it’s worth reading even if you’ve used Jekyll before, as many features require specific variables to be set.  Naming and Path  Create a new file named YYYY-MM-DD-TITLE.EXTENSION and put it in the _posts of the root directory. Please note that the EXTENSION must be one of md and markdown. If you want to save time of cre...</summary>
-
-  </entry>
-
-  
-  <entry>
-    <title>Text and Typography</title>
-    <link href="https://sieunnnn.github.io/posts/text-and-typography/" rel="alternate" type="text/html" title="Text and Typography" />
-    <published>2019-08-08T12:33:00+09:00</published>
-  
-    <updated>2019-08-08T12:33:00+09:00</updated>
-  
-    <id>https://sieunnnn.github.io/posts/text-and-typography/</id>
-    <content type="text/html" src="https://sieunnnn.github.io/posts/text-and-typography/" />
-    <author>
-      <name>cotes</name>
-    </author>
-
-  
-    
-    <category term="Blogging" />
-    
-    <category term="Demo" />
-    
-  
-
-  <summary>Examples of text, typography, math equations, diagrams, flowcharts, pictures, videos, and more.</summary>
-
-  </entry>
-
-  
-  <entry>
-    <title>처음으로 만들어본 글</title>
-    <link href="https://sieunnnn.github.io/posts/new-post/" rel="alternate" type="text/html" title="처음으로 만들어본 글" />
-    <published>2019-08-08T12:33:00+09:00</published>
-  
-    <updated>2019-08-08T12:33:00+09:00</updated>
-  
-    <id>https://sieunnnn.github.io/posts/new-post/</id>
-    <content type="text/html" src="https://sieunnnn.github.io/posts/new-post/" />
-    <author>
-      <name>cotes</name>
-    </author>
-
-  
-    
-    <category term="Blogging" />
-    
-    <category term="Demo" />
-    
-  
-
-  <summary>Examples of text, typography, math equations, diagrams, flowcharts, pictures, videos, and more.</summary>
 
   </entry>
 

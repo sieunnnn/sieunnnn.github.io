@@ -270,7 +270,7 @@
     <a href="/" id="avatar"><img src="/assets/img/profile.jpg" alt="avatar" onerror="this.style.display='none'"></a>
 
     <a class="site-title d-block" href="/">김자바의 개발일지</a>
-    <p class="site-subtitle mb-0">나는 오늘도 고찰을 한다</p>
+    <p class="site-subtitle mb-0">🚧 노션 블로그 이전중 🚧</p>
     <a href="https://hits.seeyoufarm.com"><img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fsieunnnn.github.io&count_bg=%23575757&title_bg=%23010081&icon=&icon_color=%23E7E7E7&title=%F0%9F%92%BB+%F0%9F%92%A5%E4%B8%89%F0%9F%94%AB%28+%CB%99%EA%92%B3%E2%80%8B%CB%99+%29&edge_flat=false" style="margin-top: 15px"/></a>
   </header>
   <!-- .profile-wrapper -->
@@ -1649,6 +1649,15 @@
 
 
 
+  
+    
+      
+        
+  
+        
+        
+      
+
 
 
 
@@ -1744,7 +1753,7 @@
            <img src="/assets/img/icons/mouse.png" width="18px" style="margin-bottom: 3px !important;"/>
       </a></h2>
 
-<p>Create a new file named <code class="language-java filepath highlighter-rouge"><span class="no">YYYY</span><span class="o">-</span><span class="no">MM</span><span class="o">-</span><span class="no">DD</span><span class="o">-</span><span class="no">TITLE</span><span class="o">.</span><span class="na">EXTENSION</span></code> and put it in the <code class="language-java filepath highlighter-rouge"><span class="n">_posts</span></code> of the root directory. Please note that the <code class="language-java filepath highlighter-rouge"><span class="no">EXTENSION</span></code> must be one of <code class="language-java filepath highlighter-rouge"><span class="n">md</span></code> and <code class="language-java filepath highlighter-rouge"><span class="n">markdown</span></code>. If you want to save time of creating files, please consider using the plugin <a href="https://github.com/jekyll/jekyll-compose"><code class="language-java highlighter-rouge"><span class="nc">Jekyll</span><span class="o">-</span><span class="nc">Compose</span></code></a> to accomplish this.</p>
+<p>Create a new file named <code class="filepath">YYYY-MM-DD-TITLE.EXTENSION</code> and put it in the <code class="filepath">_posts</code> of the root directory. Please note that the <code class="filepath">EXTENSION</code> must be one of <code class="filepath">md</code> and <code class="filepath">markdown</code>. If you want to save time of creating files, please consider using the plugin <a href="https://github.com/jekyll/jekyll-compose"><code>Jekyll-Compose</code></a> to accomplish this.</p>
 
 <h2 id="front-matter"><span class="me-2">Front Matter</span><a href="#front-matter" class="anchor text-muted" style="text-decoration-line: none !important;" >
            <img src="/assets/img/icons/mouse.png" width="18px" style="margin-bottom: 3px !important;"/>
@@ -1769,20 +1778,20 @@
 </pre></td></tr></tbody></table></code></div></div>
 
 <blockquote class="prompt-tip">
-  <p>The posts’ <em>layout</em> has been set to <code class="language-java highlighter-rouge"><span class="n">post</span></code> by default, so there is no need to add the variable <em>layout</em> in the Front Matter block.</p>
+  <p>The posts’ <em>layout</em> has been set to <code>post</code> by default, so there is no need to add the variable <em>layout</em> in the Front Matter block.</p>
 </blockquote>
 
 <h3 id="timezone-of-date"><span class="me-2">Timezone of Date</span><a href="#timezone-of-date" class="anchor text-muted" style="text-decoration-line: none !important;" >
            <img src="/assets/img/icons/mouse.png" width="18px" style="margin-bottom: 3px !important;"/>
       </a></h3>
 
-<p>To accurately record the release date of a post, you should not only set up the <code class="language-java highlighter-rouge"><span class="n">timezone</span></code> of <code class="language-java filepath highlighter-rouge"><span class="n">_config</span><span class="o">.</span><span class="na">yml</span></code> but also provide the post’s timezone in variable <code class="language-java highlighter-rouge"><span class="n">date</span></code> of its Front Matter block. Format: <code class="language-java highlighter-rouge"><span class="o">+/-</span><span class="no">TTTT</span></code>, e.g. <code class="language-java highlighter-rouge"><span class="o">+</span><span class="mi">0800</span></code>.</p>
+<p>To accurately record the release date of a post, you should not only set up the <code>timezone</code> of <code class="filepath">_config.yml</code> but also provide the post’s timezone in variable <code>date</code> of its Front Matter block. Format: <code>+/-TTTT</code>, e.g. <code>+0800</code>.</p>
 
 <h3 id="categories-and-tags"><span class="me-2">Categories and Tags</span><a href="#categories-and-tags" class="anchor text-muted" style="text-decoration-line: none !important;" >
            <img src="/assets/img/icons/mouse.png" width="18px" style="margin-bottom: 3px !important;"/>
       </a></h3>
 
-<p>The <code class="language-java highlighter-rouge"><span class="n">categories</span></code> of each post are designed to contain up to two elements, and the number of elements in <code class="language-java highlighter-rouge"><span class="n">tags</span></code> can be zero to infinity. For instance:</p>
+<p>The <code>categories</code> of each post are designed to contain up to two elements, and the number of elements in <code>tags</code> can be zero to infinity. For instance:</p>
 
 <div class="language-yaml highlighter-rouge"><div class="code-header" style="color: black !important;"">
         <span data-label-text="YAML" style="color: black !important;"><img src="/assets/img/icons/code.png" width="21px" style="margin-right: 5px"/></span>
@@ -1800,9 +1809,9 @@
            <img src="/assets/img/icons/mouse.png" width="18px" style="margin-bottom: 3px !important;"/>
       </a></h3>
 
-<p>The author information of the post usually does not need to be filled in the <em>Front Matter</em> , they will be obtained from variables <code class="language-java highlighter-rouge"><span class="n">social</span><span class="o">.</span><span class="na">name</span></code> and the first entry of <code class="language-java highlighter-rouge"><span class="n">social</span><span class="o">.</span><span class="na">links</span></code> of the configuration file by default. But you can also override it as follows:</p>
+<p>The author information of the post usually does not need to be filled in the <em>Front Matter</em> , they will be obtained from variables <code>social.name</code> and the first entry of <code>social.links</code> of the configuration file by default. But you can also override it as follows:</p>
 
-<p>Adding author information in <code class="language-java highlighter-rouge"><span class="n">_data</span><span class="o">/</span><span class="n">authors</span><span class="o">.</span><span class="na">yml</span></code> (If your website doesn’t have this file, don’t hesitate to create one).</p>
+<p>Adding author information in <code>_data/authors.yml</code> (If your website doesn’t have this file, don’t hesitate to create one).</p>
 
 <div file="_data/authors.yml" class="language-yaml highlighter-rouge"><div class="code-header" style="color: black !important;"">
         <span data-label-text="_data/authors.yml" style="color: black !important;"><img src="/assets/img/icons/code.png" width="21px" style="margin-right: 5px"/></span>
@@ -1816,7 +1825,7 @@
   <span class="na">url</span><span class="pi">:</span> <span class="s">&lt;homepage_of_author&gt;</span>
 </pre></td></tr></tbody></table></code></div></div>
 
-<p>And then use <code class="language-java highlighter-rouge"><span class="n">author</span></code> to specify a single entry or <code class="language-java highlighter-rouge"><span class="n">authors</span></code> to specify multiple entries:</p>
+<p>And then use <code>author</code> to specify a single entry or <code>authors</code> to specify multiple entries:</p>
 
 <div class="language-yaml highlighter-rouge"><div class="code-header" style="color: black !important;"">
         <span data-label-text="YAML" style="color: black !important;"><img src="/assets/img/icons/code.png" width="21px" style="margin-right: 5px"/></span>
@@ -1832,17 +1841,17 @@
 <span class="nn">---</span>
 </pre></td></tr></tbody></table></code></div></div>
 
-<p>Having said that, the key <code class="language-java highlighter-rouge"><span class="n">author</span></code> can also identify multiple entries.</p>
+<p>Having said that, the key <code>author</code> can also identify multiple entries.</p>
 
 <blockquote class="prompt-info">
-  <p>The benefit of reading the author information from the file <code class="language-java filepath highlighter-rouge"><span class="n">_data</span><span class="o">/</span><span class="n">authors</span><span class="o">.</span><span class="na">yml</span></code> is that the page will have the meta tag <code class="language-java highlighter-rouge"><span class="nl">twitter:</span><span class="n">creator</span></code>, which enriches the <a href="https://developer.twitter.com/en/docs/twitter-for-websites/cards/guides/getting-started#card-and-content-attribution">Twitter Cards</a> and is good for SEO.</p>
+  <p>The benefit of reading the author information from the file <code class="filepath">_data/authors.yml</code> is that the page will have the meta tag <code>twitter:creator</code>, which enriches the <a href="https://developer.twitter.com/en/docs/twitter-for-websites/cards/guides/getting-started#card-and-content-attribution">Twitter Cards</a> and is good for SEO.</p>
 </blockquote>
 
 <h3 id="post-description"><span class="me-2">Post Description</span><a href="#post-description" class="anchor text-muted" style="text-decoration-line: none !important;" >
            <img src="/assets/img/icons/mouse.png" width="18px" style="margin-bottom: 3px !important;"/>
       </a></h3>
 
-<p>By default, the first words of the post are used to display on the home page for a list of posts, in the <em>Further Reading</em> section, and in the XML of the RSS feed. If you don’t want to display the auto-generated description for the post, you can customize it using the <code class="language-java highlighter-rouge"><span class="n">description</span></code> field in the <em>Front Matter</em> as follows:</p>
+<p>By default, the first words of the post are used to display on the home page for a list of posts, in the <em>Further Reading</em> section, and in the XML of the RSS feed. If you don’t want to display the auto-generated description for the post, you can customize it using the <code>description</code> field in the <em>Front Matter</em> as follows:</p>
 
 <div class="language-yaml highlighter-rouge"><div class="code-header" style="color: black !important;"">
         <span data-label-text="YAML" style="color: black !important;"><img src="/assets/img/icons/code.png" width="21px" style="margin-right: 5px"/></span>
@@ -1854,13 +1863,13 @@
 <span class="nn">---</span>
 </pre></td></tr></tbody></table></code></div></div>
 
-<p>Additionally, the <code class="language-java highlighter-rouge"><span class="n">description</span></code> text will also be displayed under the post title on the post’s page.</p>
+<p>Additionally, the <code>description</code> text will also be displayed under the post title on the post’s page.</p>
 
 <h2 id="table-of-contents"><span class="me-2">Table of Contents</span><a href="#table-of-contents" class="anchor text-muted" style="text-decoration-line: none !important;" >
            <img src="/assets/img/icons/mouse.png" width="18px" style="margin-bottom: 3px !important;"/>
       </a></h2>
 
-<p>By default, the <strong>T</strong>able <strong>o</strong>f <strong>C</strong>ontents (TOC) is displayed on the right panel of the post. If you want to turn it off globally, go to <code class="language-java filepath highlighter-rouge"><span class="n">_config</span><span class="o">.</span><span class="na">yml</span></code> and set the value of variable <code class="language-java highlighter-rouge"><span class="n">toc</span></code> to <code class="language-java highlighter-rouge"><span class="kc">false</span></code>. If you want to turn off TOC for a specific post, add the following to the post’s <a href="https://jekyllrb.com/docs/front-matter/">Front Matter</a>:</p>
+<p>By default, the <strong>T</strong>able <strong>o</strong>f <strong>C</strong>ontents (TOC) is displayed on the right panel of the post. If you want to turn it off globally, go to <code class="filepath">_config.yml</code> and set the value of variable <code>toc</code> to <code>false</code>. If you want to turn off TOC for a specific post, add the following to the post’s <a href="https://jekyllrb.com/docs/front-matter/">Front Matter</a>:</p>
 
 <div class="language-yaml highlighter-rouge"><div class="code-header" style="color: black !important;"">
         <span data-label-text="YAML" style="color: black !important;"><img src="/assets/img/icons/code.png" width="21px" style="margin-right: 5px"/></span>
@@ -1876,7 +1885,7 @@
            <img src="/assets/img/icons/mouse.png" width="18px" style="margin-bottom: 3px !important;"/>
       </a></h2>
 
-<p>The global setting for comments is defined by the <code class="language-java highlighter-rouge"><span class="n">comments</span><span class="o">.</span><span class="na">provider</span></code> option in the <code class="language-java filepath highlighter-rouge"><span class="n">_config</span><span class="o">.</span><span class="na">yml</span></code> file. Once a comment system is selected for this variable, comments will be enabled for all posts.</p>
+<p>The global setting for comments is defined by the <code>comments.provider</code> option in the <code class="filepath">_config.yml</code> file. Once a comment system is selected for this variable, comments will be enabled for all posts.</p>
 
 <p>If you want to close the comment for a specific post, add the following to the <strong>Front Matter</strong> of the post:</p>
 
@@ -1904,7 +1913,7 @@
 
 <ul>
   <li>
-    <p>If you are using a CDN to host media files, you can specify the <code class="language-java highlighter-rouge"><span class="n">cdn</span></code> in <code class="language-java filepath highlighter-rouge"><span class="n">_config</span><span class="o">.</span><span class="na">yml</span></code>. The URLs of media resources for site avatar and posts are then prefixed with the CDN domain name.</p>
+    <p>If you are using a CDN to host media files, you can specify the <code>cdn</code> in <code class="filepath">_config.yml</code>. The URLs of media resources for site avatar and posts are then prefixed with the CDN domain name.</p>
 
     <div class="language-yaml nolineno highlighter-rouge" file="_config.yml"><div class="code-header" style="color: black !important;"">
         <span data-label-text="_config.yml" style="color: black !important;"><img src="/assets/img/icons/code.png" width="21px" style="margin-right: 5px"/></span>
@@ -1913,7 +1922,7 @@
 </pre></td></tr></tbody></table></code></div>    </div>
   </li>
   <li>
-    <p>To specify the resource path prefix for the current post/page range, set <code class="language-java highlighter-rouge"><span class="n">media_subpath</span></code> in the <em>front matter</em> of the post:</p>
+    <p>To specify the resource path prefix for the current post/page range, set <code>media_subpath</code> in the <em>front matter</em> of the post:</p>
 
     <div class="language-yaml nolineno highlighter-rouge"><div class="code-header" style="color: black !important;"">
         <span data-label-text="YAML" style="color: black !important;"><img src="/assets/img/icons/code.png" width="21px" style="margin-right: 5px"/></span>
@@ -1927,7 +1936,7 @@
   </li>
 </ul>
 
-<p>The option <code class="language-java highlighter-rouge"><span class="n">site</span><span class="o">.</span><span class="na">cdn</span></code> and <code class="language-java highlighter-rouge"><span class="n">page</span><span class="o">.</span><span class="na">media_subpath</span></code> can be used individually or in combination to flexibly compose the final resource URL: <code class="language-java highlighter-rouge"><span class="o">[</span><span class="n">site</span><span class="o">.</span><span class="na">cdn</span><span class="o">/][</span><span class="n">page</span><span class="o">.</span><span class="na">media_subpath</span><span class="o">/]</span><span class="n">file</span><span class="o">.</span><span class="na">ext</span></code></p>
+<p>The option <code>site.cdn</code> and <code>page.media_subpath</code> can be used individually or in combination to flexibly compose the final resource URL: <code>[site.cdn/][page.media_subpath/]file.ext</code></p>
 
 <h3 id="images"><span class="me-2">Images</span><a href="#images" class="anchor text-muted" style="text-decoration-line: none !important;" >
            <img src="/assets/img/icons/mouse.png" width="18px" style="margin-bottom: 3px !important;"/>
@@ -1963,7 +1972,7 @@
   <p>For an SVG, you have to at least specify its <em>width</em>, otherwise it won’t be rendered.</p>
 </blockquote>
 
-<p>Starting from <em>Chirpy v5.0.0</em>, <code class="language-java highlighter-rouge"><span class="n">height</span></code> and <code class="language-java highlighter-rouge"><span class="n">width</span></code> support abbreviations (<code class="language-java highlighter-rouge"><span class="n">height</span></code> → <code class="language-java highlighter-rouge"><span class="n">h</span></code>, <code class="language-java highlighter-rouge"><span class="n">width</span></code> → <code class="language-java highlighter-rouge"><span class="n">w</span></code>). The following example has the same effect as the above:</p>
+<p>Starting from <em>Chirpy v5.0.0</em>, <code>height</code> and <code>width</code> support abbreviations (<code>height</code> → <code>h</code>, <code>width</code> → <code>w</code>). The following example has the same effect as the above:</p>
 
 <div class="language-markdown nolineno highlighter-rouge"><div class="code-header" style="color: black !important;"">
         <span data-label-text="Markdown" style="color: black !important;"><img src="/assets/img/icons/code.png" width="21px" style="margin-right: 5px"/></span>
@@ -1975,7 +1984,7 @@
            <img src="/assets/img/icons/mouse.png" width="18px" style="margin-bottom: 3px !important;"/>
       </a></h4>
 
-<p>By default, the image is centered, but you can specify the position by using one of the classes <code class="language-java highlighter-rouge"><span class="n">normal</span></code>, <code class="language-java highlighter-rouge"><span class="n">left</span></code>, and <code class="language-java highlighter-rouge"><span class="n">right</span></code>.</p>
+<p>By default, the image is centered, but you can specify the position by using one of the classes <code>normal</code>, <code>left</code>, and <code>right</code>.</p>
 
 <blockquote class="prompt-warning">
   <p>Once the position is specified, the image caption should not be added.</p>
@@ -2017,7 +2026,7 @@
            <img src="/assets/img/icons/mouse.png" width="18px" style="margin-bottom: 3px !important;"/>
       </a></h4>
 
-<p>You can make images follow theme preferences in dark/light mode. This requires you to prepare two images, one for dark mode and one for light mode, and then assign them a specific class (<code class="language-java highlighter-rouge"><span class="n">dark</span></code> or <code class="language-java highlighter-rouge"><span class="n">light</span></code>):</p>
+<p>You can make images follow theme preferences in dark/light mode. This requires you to prepare two images, one for dark mode and one for light mode, and then assign them a specific class (<code>dark</code> or <code>light</code>):</p>
 
 <div class="language-markdown highlighter-rouge"><div class="code-header" style="color: black !important;"">
         <span data-label-text="Markdown" style="color: black !important;"><img src="/assets/img/icons/code.png" width="21px" style="margin-right: 5px"/></span>
@@ -2043,7 +2052,7 @@
            <img src="/assets/img/icons/mouse.png" width="18px" style="margin-bottom: 3px !important;"/>
       </a></h4>
 
-<p>If you want to add an image at the top of the post, please provide an image with a resolution of <code class="language-java highlighter-rouge"><span class="mi">1200</span> <span class="n">x</span> <span class="mi">630</span></code>. Please note that if the image aspect ratio does not meet <code class="language-java highlighter-rouge"><span class="mf">1.91</span> <span class="o">:</span> <span class="mi">1</span></code>, the image will be scaled and cropped.</p>
+<p>If you want to add an image at the top of the post, please provide an image with a resolution of <code>1200 x 630</code>. Please note that if the image aspect ratio does not meet <code>1.91 : 1</code>, the image will be scaled and cropped.</p>
 
 <p>Knowing these prerequisites, you can start setting the image’s attribute:</p>
 
@@ -2061,9 +2070,9 @@
 <span class="nn">---</span>
 </pre></td></tr></tbody></table></code></div></div>
 
-<p>Note that the <a href="#url-prefix"><code class="language-java highlighter-rouge"><span class="n">media_subpath</span></code></a> can also be passed to the preview image, that is, when it has been set, the attribute <code class="language-java highlighter-rouge"><span class="n">path</span></code> only needs the image file name.</p>
+<p>Note that the <a href="#url-prefix"><code>media_subpath</code></a> can also be passed to the preview image, that is, when it has been set, the attribute <code>path</code> only needs the image file name.</p>
 
-<p>For simple use, you can also just use <code class="language-java highlighter-rouge"><span class="n">image</span></code> to define the path.</p>
+<p>For simple use, you can also just use <code>image</code> to define the path.</p>
 
 <div class="language-yml highlighter-rouge"><div class="code-header" style="color: black !important;"">
         <span data-label-text="YAML" style="color: black !important;"><img src="/assets/img/icons/code.png" width="21px" style="margin-right: 5px"/></span>
@@ -2121,7 +2130,7 @@
 </pre></td><td class="rouge-code"><pre><span class="cp">{%</span><span class="w"> </span><span class="nt">include</span><span class="w"> </span>embed/{Platform}.html<span class="w"> </span><span class="na">id</span><span class="o">=</span><span class="s1">'{ID}'</span><span class="w"> </span><span class="cp">%}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
-<p>Where <code class="language-java highlighter-rouge"><span class="nc">Platform</span></code> is the lowercase of the platform name, and <code class="language-java highlighter-rouge"><span class="no">ID</span></code> is the video ID.</p>
+<p>Where <code>Platform</code> is the lowercase of the platform name, and <code>ID</code> is the video ID.</p>
 
 <p>The following table shows how to get the two parameters we need in a given video URL, and you can also know the currently supported video platforms.</p>
 
@@ -2136,18 +2145,18 @@
   <tbody>
     <tr>
       <td><a href="https://www.youtube.com/watch?v=H-B46URT4mg">https://www.<strong>youtube</strong>.com/watch?v=<strong>H-B46URT4mg</strong></a></td>
-      <td><code class="language-java highlighter-rouge"><span class="n">youtube</span></code></td>
-      <td style="text-align: left"><code class="language-java highlighter-rouge"><span class="no">H</span><span class="o">-</span><span class="nc">B46URT4mg</span></code></td>
+      <td><code>youtube</code></td>
+      <td style="text-align: left"><code>H-B46URT4mg</code></td>
     </tr>
     <tr>
       <td><a href="https://www.twitch.tv/videos/1634779211">https://www.<strong>twitch</strong>.tv/videos/<strong>1634779211</strong></a></td>
-      <td><code class="language-java highlighter-rouge"><span class="n">twitch</span></code></td>
-      <td style="text-align: left"><code class="language-java highlighter-rouge"><span class="mi">1634779211</span></code></td>
+      <td><code>twitch</code></td>
+      <td style="text-align: left"><code>1634779211</code></td>
     </tr>
     <tr>
       <td><a href="https://www.bilibili.com/video/BV1Q44y1B7Wf">https://www.<strong>bilibili</strong>.com/video/<strong>BV1Q44y1B7Wf</strong></a></td>
-      <td><code class="language-java highlighter-rouge"><span class="n">bilibili</span></code></td>
-      <td style="text-align: left"><code class="language-java highlighter-rouge"><span class="nc">BV1Q44y1B7Wf</span></code></td>
+      <td><code>bilibili</code></td>
+      <td style="text-align: left"><code>BV1Q44y1B7Wf</code></td>
     </tr>
   </tbody>
 </table></div>
@@ -2164,17 +2173,17 @@
 </pre></td><td class="rouge-code"><pre><span class="cp">{%</span><span class="w"> </span><span class="nt">include</span><span class="w"> </span>embed/video.html<span class="w"> </span><span class="na">src</span><span class="o">=</span><span class="s1">'{URL}'</span><span class="w"> </span><span class="cp">%}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
-<p>Where <code class="language-java highlighter-rouge"><span class="no">URL</span></code> is a URL to a video file e.g. <code class="language-java highlighter-rouge"><span class="o">/</span><span class="n">path</span><span class="o">/</span><span class="n">to</span><span class="o">/</span><span class="n">sample</span><span class="o">/</span><span class="n">video</span><span class="o">.</span><span class="na">mp4</span></code>.</p>
+<p>Where <code>URL</code> is a URL to a video file e.g. <code>/path/to/sample/video.mp4</code>.</p>
 
 <p>You can also specify additional attributes for the embedded video file. Here is a full list of attributes allowed.</p>
 
 <ul>
-  <li><code class="language-java highlighter-rouge"><span class="n">poster</span><span class="o">=</span><span class="err">'</span><span class="o">/</span><span class="n">path</span><span class="o">/</span><span class="n">to</span><span class="o">/</span><span class="n">poster</span><span class="o">.</span><span class="na">png</span><span class="err">'</span></code> — poster image for a video that is shown while video is downloading</li>
-  <li><code class="language-java highlighter-rouge"><span class="n">title</span><span class="o">=</span><span class="err">'</span><span class="nc">Text</span><span class="err">'</span></code> — title for a video that appears below the video and looks same as for images</li>
-  <li><code class="language-java highlighter-rouge"><span class="n">autoplay</span><span class="o">=</span><span class="kc">true</span></code> — video automatically begins to play back as soon as it can</li>
-  <li><code class="language-java highlighter-rouge"><span class="n">loop</span><span class="o">=</span><span class="kc">true</span></code> — automatically seek back to the start upon reaching the end of the video</li>
-  <li><code class="language-java highlighter-rouge"><span class="n">muted</span><span class="o">=</span><span class="kc">true</span></code> — audio will be initially silenced</li>
-  <li><code class="language-java highlighter-rouge"><span class="n">types</span></code> — specify the extensions of additional video formats separated by <code class="language-java highlighter-rouge"><span class="o">|</span></code>. Ensure these files exist in the same directory as your primary video file.</li>
+  <li><code>poster='/path/to/poster.png'</code> — poster image for a video that is shown while video is downloading</li>
+  <li><code>title='Text'</code> — title for a video that appears below the video and looks same as for images</li>
+  <li><code>autoplay=true</code> — video automatically begins to play back as soon as it can</li>
+  <li><code>loop=true</code> — automatically seek back to the start upon reaching the end of the video</li>
+  <li><code>muted=true</code> — audio will be initially silenced</li>
+  <li><code>types</code> — specify the extensions of additional video formats separated by <code>|</code>. Ensure these files exist in the same directory as your primary video file.</li>
 </ul>
 
 <p>Consider an example using all of the above:</p>
@@ -2215,13 +2224,13 @@
 </pre></td><td class="rouge-code"><pre><span class="cp">{%</span><span class="w"> </span><span class="nt">include</span><span class="w"> </span>embed/audio.html<span class="w"> </span><span class="na">src</span><span class="o">=</span><span class="s1">'{URL}'</span><span class="w"> </span><span class="cp">%}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
-<p>Where <code class="language-java highlighter-rouge"><span class="no">URL</span></code> is a URL to an audio file e.g. <code class="language-java highlighter-rouge"><span class="o">/</span><span class="n">path</span><span class="o">/</span><span class="n">to</span><span class="o">/</span><span class="n">audio</span><span class="o">.</span><span class="na">mp3</span></code>.</p>
+<p>Where <code>URL</code> is a URL to an audio file e.g. <code>/path/to/audio.mp3</code>.</p>
 
 <p>You can also specify additional attributes for the embedded audio file. Here is a full list of attributes allowed.</p>
 
 <ul>
-  <li><code class="language-java highlighter-rouge"><span class="n">title</span><span class="o">=</span><span class="err">'</span><span class="nc">Text</span><span class="err">'</span></code> — title for an audio that appears below the audio and looks same as for images</li>
-  <li><code class="language-java highlighter-rouge"><span class="n">types</span></code> — specify the extensions of additional audio formats separated by <code class="language-java highlighter-rouge"><span class="o">|</span></code>. Ensure these files exist in the same directory as your primary audio file.</li>
+  <li><code>title='Text'</code> — title for an audio that appears below the audio and looks same as for images</li>
+  <li><code>types</code> — specify the extensions of additional audio formats separated by <code>|</code>. Ensure these files exist in the same directory as your primary audio file.</li>
 </ul>
 
 <p>Consider an example using all of the above:</p>
@@ -2262,7 +2271,7 @@
            <img src="/assets/img/icons/mouse.png" width="18px" style="margin-bottom: 3px !important;"/>
       </a></h2>
 
-<p>There are several types of prompts: <code class="language-java highlighter-rouge"><span class="n">tip</span></code>, <code class="language-java highlighter-rouge"><span class="n">info</span></code>, <code class="language-java highlighter-rouge"><span class="n">warning</span></code>, and <code class="language-java highlighter-rouge"><span class="n">danger</span></code>. They can be generated by adding the class <code class="language-java highlighter-rouge"><span class="n">prompt</span><span class="o">-{</span><span class="n">type</span><span class="o">}</span></code> to the blockquote. For example, define a prompt of type <code class="language-java highlighter-rouge"><span class="n">info</span></code> as follows:</p>
+<p>There are several types of prompts: <code>tip</code>, <code>info</code>, <code>warning</code>, and <code>danger</code>. They can be generated by adding the class <code>prompt-{type}</code> to the blockquote. For example, define a prompt of type <code>info</code> as follows:</p>
 
 <div class="language-md nolineno highlighter-rouge"><div class="code-header" style="color: black !important;"">
         <span data-label-text="Markdown" style="color: black !important;"><img src="/assets/img/icons/code.png" width="21px" style="margin-right: 5px"/></span>
@@ -2300,7 +2309,7 @@
            <img src="/assets/img/icons/mouse.png" width="18px" style="margin-bottom: 3px !important;"/>
       </a></h3>
 
-<p>Markdown symbols <code class="language-java highlighter-rouge"><span class="err">```</span></code> can easily create a code block as follows:</p>
+<p>Markdown symbols <code>```</code> can easily create a code block as follows:</p>
 
 <div class="language-md highlighter-rouge"><div class="code-header" style="color: black !important;"">
         <span data-label-text="Markdown" style="color: black !important;"><img src="/assets/img/icons/code.png" width="21px" style="margin-right: 5px"/></span>
@@ -2316,7 +2325,7 @@
            <img src="/assets/img/icons/mouse.png" width="18px" style="margin-bottom: 3px !important;"/>
       </a></h4>
 
-<p>Using <code class="language-java highlighter-rouge"><span class="err">```</span><span class="o">{</span><span class="n">language</span><span class="o">}</span></code> you will get a code block with syntax highlight:</p>
+<p>Using <code>```{language}</code> you will get a code block with syntax highlight:</p>
 
 <div class="language-markdown highlighter-rouge"><div class="code-header" style="color: black !important;"">
         <span data-label-text="Markdown" style="color: black !important;"><img src="/assets/img/icons/code.png" width="21px" style="margin-right: 5px"/></span>
@@ -2329,14 +2338,14 @@
 </pre></td></tr></tbody></table></code></div></div>
 
 <blockquote class="prompt-danger">
-  <p>The Jekyll tag <code class="language-java highlighter-rouge"><span class="o">{%</span> <span class="n">highlight</span> <span class="o">%}</span></code> is not compatible with this theme.</p>
+  <p>The Jekyll tag <code>{% highlight %}</code> is not compatible with this theme.</p>
 </blockquote>
 
 <h4 id="line-number"><span class="me-2">Line Number</span><a href="#line-number" class="anchor text-muted" style="text-decoration-line: none !important;" >
            <img src="/assets/img/icons/mouse.png" width="18px" style="margin-bottom: 3px !important;"/>
       </a></h4>
 
-<p>By default, all languages except <code class="language-java highlighter-rouge"><span class="n">plaintext</span></code>, <code class="language-java highlighter-rouge"><span class="n">console</span></code>, and <code class="language-java highlighter-rouge"><span class="n">terminal</span></code> will display line numbers. When you want to hide the line number of a code block, add the class <code class="language-java highlighter-rouge"><span class="n">nolineno</span></code> to it:</p>
+<p>By default, all languages except <code>plaintext</code>, <code>console</code>, and <code>terminal</code> will display line numbers. When you want to hide the line number of a code block, add the class <code>nolineno</code> to it:</p>
 
 <div class="language-markdown highlighter-rouge"><div class="code-header" style="color: black !important;"">
         <span data-label-text="Markdown" style="color: black !important;"><img src="/assets/img/icons/code.png" width="21px" style="margin-right: 5px"/></span>
@@ -2354,7 +2363,7 @@
            <img src="/assets/img/icons/mouse.png" width="18px" style="margin-bottom: 3px !important;"/>
       </a></h4>
 
-<p>You may have noticed that the code language will be displayed at the top of the code block. If you want to replace it with the file name, you can add the attribute <code class="language-java highlighter-rouge"><span class="n">file</span></code> to achieve this:</p>
+<p>You may have noticed that the code language will be displayed at the top of the code block. If you want to replace it with the file name, you can add the attribute <code>file</code> to achieve this:</p>
 
 <div class="language-markdown highlighter-rouge"><div class="code-header" style="color: black !important;"">
         <span data-label-text="Markdown" style="color: black !important;"><img src="/assets/img/icons/code.png" width="21px" style="margin-right: 5px"/></span>
@@ -2372,7 +2381,7 @@
            <img src="/assets/img/icons/mouse.png" width="18px" style="margin-bottom: 3px !important;"/>
       </a></h4>
 
-<p>If you want to display the <strong>Liquid</strong> snippet, surround the liquid code with <code class="language-java highlighter-rouge"><span class="o">{%</span> <span class="n">raw</span> <span class="o">%}</span></code> and <code class="language-java highlighter-rouge"><span class="o">{%</span> <span class="n">endraw</span> <span class="o">%}</span></code>:</p>
+<p>If you want to display the <strong>Liquid</strong> snippet, surround the liquid code with <code>{% raw %}</code> and <code>{% endraw %}</code>:</p>
 
 <div class="language-markdown highlighter-rouge"><div class="code-header" style="color: black !important;"">
         <span data-label-text="Markdown" style="color: black !important;"><img src="/assets/img/icons/code.png" width="21px" style="margin-right: 5px"/></span>
@@ -2392,7 +2401,7 @@
 {% endraw %}
 </pre></td></tr></tbody></table></code></div></div>
 
-<p>Or adding <code class="language-java highlighter-rouge"><span class="nl">render_with_liquid:</span> <span class="kc">false</span></code> (Requires Jekyll 4.0 or higher) to the post’s YAML block.</p>
+<p>Or adding <code>render_with_liquid: false</code> (Requires Jekyll 4.0 or higher) to the post’s YAML block.</p>
 
 <h2 id="mathematics"><span class="me-2">Mathematics</span><a href="#mathematics" class="anchor text-muted" style="text-decoration-line: none !important;" >
            <img src="/assets/img/icons/mouse.png" width="18px" style="margin-bottom: 3px !important;"/>
@@ -2413,14 +2422,14 @@
 <p>After enabling the mathematical feature, you can add math equations with the following syntax:</p>
 
 <ul>
-  <li><strong>Block math</strong> should be added with <code class="language-java highlighter-rouge"><span class="err">$$</span> <span class="n">math</span> <span class="err">$$</span></code> with <strong>mandatory</strong> blank lines before and after <code class="language-java highlighter-rouge"><span class="err">$$</span></code>
+  <li><strong>Block math</strong> should be added with <code>$$ math $$</code> with <strong>mandatory</strong> blank lines before and after <code>$$</code>
     <ul>
-      <li><strong>Inserting equation numbering</strong> should be added with <code class="language-java highlighter-rouge"><span class="err">$$\</span><span class="n">begin</span><span class="o">{</span><span class="n">equation</span><span class="o">}</span> <span class="n">math</span> <span class="err">\</span><span class="n">end</span><span class="o">{</span><span class="n">equation</span><span class="o">}</span><span class="err">$$</span></code></li>
-      <li><strong>Referencing equation numbering</strong> should be done with <code class="language-java highlighter-rouge"><span class="err">\</span><span class="n">label</span><span class="o">{</span><span class="nl">eq:</span><span class="n">label_name</span><span class="o">}</span></code> in the equation block and <code class="language-java highlighter-rouge"><span class="err">\</span><span class="n">eqref</span><span class="o">{</span><span class="nl">eq:</span><span class="n">label_name</span><span class="o">}</span></code> inline with text (see example below)</li>
+      <li><strong>Inserting equation numbering</strong> should be added with <code>$$\begin{equation} math \end{equation}$$</code></li>
+      <li><strong>Referencing equation numbering</strong> should be done with <code>\label{eq:label_name}</code> in the equation block and <code>\eqref{eq:label_name}</code> inline with text (see example below)</li>
     </ul>
   </li>
-  <li><strong>Inline math</strong> (in lines) should be added with <code class="language-java highlighter-rouge"><span class="err">$$</span> <span class="n">math</span> <span class="err">$$</span></code> without any blank line before or after <code class="language-java highlighter-rouge"><span class="err">$$</span></code></li>
-  <li><strong>Inline math</strong> (in lists) should be added with <code class="language-java highlighter-rouge"><span class="err">\$$</span> <span class="n">math</span> <span class="err">$$</span></code></li>
+  <li><strong>Inline math</strong> (in lines) should be added with <code>$$ math $$</code> without any blank line before or after <code>$$</code></li>
+  <li><strong>Inline math</strong> (in lists) should be added with <code>\$$ math $$</code></li>
 </ul>
 
 <div class="language-markdown highlighter-rouge"><div class="code-header" style="color: black !important;"">
@@ -2480,8 +2489,8 @@ Can be referenced as <span class="se">\e</span>qref{eq:label_name}.
 </pre></td></tr></tbody></table></code></div></div>
 
 <blockquote class="prompt-tip">
-  <p>Starting with <code class="language-java highlighter-rouge"><span class="n">v7</span><span class="o">.</span><span class="mf">0.0</span></code>, configuration options for <strong>MathJax</strong> have been moved to file <code class="language-java filepath highlighter-rouge"><span class="n">assets</span><span class="o">/</span><span class="n">js</span><span class="o">/</span><span class="n">data</span><span class="o">/</span><span class="n">mathjax</span><span class="o">.</span><span class="na">js</span></code>, and you can change the options as needed, such as adding <a href="https://docs.mathjax.org/en/latest/input/tex/extensions/index.html">extensions</a>.<br />
-If you are building the site via <code class="language-java highlighter-rouge"><span class="n">chirpy</span><span class="o">-</span><span class="n">starter</span></code>, copy that file from the gem installation directory (check with command <code class="language-java highlighter-rouge"><span class="n">bundle</span> <span class="n">info</span> <span class="o">--</span><span class="n">path</span> <span class="n">jekyll</span><span class="o">-</span><span class="n">theme</span><span class="o">-</span><span class="n">chirpy</span></code>) to the same directory in your repository.</p>
+  <p>Starting with <code>v7.0.0</code>, configuration options for <strong>MathJax</strong> have been moved to file <code class="filepath">assets/js/data/mathjax.js</code>, and you can change the options as needed, such as adding <a href="https://docs.mathjax.org/en/latest/input/tex/extensions/index.html">extensions</a>.<br />
+If you are building the site via <code>chirpy-starter</code>, copy that file from the gem installation directory (check with command <code>bundle info --path jekyll-theme-chirpy</code>) to the same directory in your repository.</p>
 </blockquote>
 
 <h2 id="mermaid"><span class="me-2">Mermaid</span><a href="#mermaid" class="anchor text-muted" style="text-decoration-line: none !important;" >
@@ -2500,7 +2509,7 @@ If you are building the site via <code class="language-java highlighter-rouge"><
 <span class="nn">---</span>
 </pre></td></tr></tbody></table></code></div></div>
 
-<p>Then you can use it like other markdown languages: surround the graph code with <code class="language-java highlighter-rouge"><span class="err">```</span><span class="n">mermaid</span></code> and <code class="language-java highlighter-rouge"><span class="err">```</span></code>.</p>
+<p>Then you can use it like other markdown languages: surround the graph code with <code>```mermaid</code> and <code>```</code>.</p>
 
 <h2 id="learn-more"><span class="me-2">Learn More</span><a href="#learn-more" class="anchor text-muted" style="text-decoration-line: none !important;" >
            <img src="/assets/img/icons/mouse.png" width="18px" style="margin-bottom: 3px !important;"/>
@@ -2587,35 +2596,35 @@ If you are building the site via <code class="language-java highlighter-rouge"><
         
         
         <li class="text-truncate lh-lg">
+          <a href="/posts/default-handler-exception-resolver/">DefaultHandlerExceptionResolver</a>
+        </li>
+      
+        
+        
+        
+        <li class="text-truncate lh-lg">
+          <a href="/posts/lazy-initialization-exception/">LazyInitializationException 과 SecurityContextHolder</a>
+        </li>
+      
+        
+        
+        
+        <li class="text-truncate lh-lg">
+          <a href="/posts/class-cast-exception/">ClassCastException - 왜 Optional 을 사용할 수 없을까?</a>
+        </li>
+      
+        
+        
+        
+        <li class="text-truncate lh-lg">
+          <a href="/posts/form-login/">Form Login 방식으로 로그인 처리하기</a>
+        </li>
+      
+        
+        
+        
+        <li class="text-truncate lh-lg">
           <a href="/posts/customize-the-favicon/">Customize the Favicon</a>
-        </li>
-      
-        
-        
-        
-        <li class="text-truncate lh-lg">
-          <a href="/posts/getting-started/">Getting Started</a>
-        </li>
-      
-        
-        
-        
-        <li class="text-truncate lh-lg">
-          <a href="/posts/write-a-new-post/">Writing a New Post</a>
-        </li>
-      
-        
-        
-        
-        <li class="text-truncate lh-lg">
-          <a href="/posts/new-post/">처음으로 만들어본 글</a>
-        </li>
-      
-        
-        
-        
-        <li class="text-truncate lh-lg">
-          <a href="/posts/text-and-typography/">Text and Typography</a>
         </li>
       
     </ul>
@@ -2644,6 +2653,25 @@ If you are building the site via <code class="language-java highlighter-rouge"><
     
     
     
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
   
     
     
@@ -2663,17 +2691,6 @@ If you are building the site via <code class="language-java highlighter-rouge"><
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-      
-    
   
     
     
@@ -2688,6 +2705,67 @@ If you are building the site via <code class="language-java highlighter-rouge"><
     
     
     
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
       
     
   
@@ -2701,6 +2779,53 @@ If you are building the site via <code class="language-java highlighter-rouge"><
     
     
     
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
     
   
     
@@ -2718,6 +2843,9 @@ If you are building the site via <code class="language-java highlighter-rouge"><
     <div class="d-flex flex-wrap mt-3 mb-1 me-3">
       
         
+        <a class="post-tag" href="/tags/exception/">exception</a>
+      
+        
         <a class="post-tag" href="/tags/typography/">typography</a>
       
         
@@ -2725,6 +2853,12 @@ If you are building the site via <code class="language-java highlighter-rouge"><
       
         
         <a class="post-tag" href="/tags/getting-started/">getting started</a>
+      
+        
+        <a class="post-tag" href="/tags/spring-boot-3/">spring boot 3</a>
+      
+        
+        <a class="post-tag" href="/tags/vue-js/">vue.js</a>
       
         
         <a class="post-tag" href="/tags/writing/">writing</a>
@@ -2739,6 +2873,15 @@ If you are building the site via <code class="language-java highlighter-rouge"><
               
               
 
+
+  
+    
+      
+        
+  
+        
+        
+      
 
 
 
@@ -3035,6 +3178,25 @@ If you are building the site via <code class="language-java highlighter-rouge"><
     
     
     
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
   
     
     
@@ -3054,17 +3216,6 @@ If you are building the site via <code class="language-java highlighter-rouge"><
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-      
-    
   
     
     
@@ -3079,6 +3230,67 @@ If you are building the site via <code class="language-java highlighter-rouge"><
     
     
     
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
       
     
   
@@ -3092,6 +3304,53 @@ If you are building the site via <code class="language-java highlighter-rouge"><
     
     
     
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
     
   
     
@@ -3109,6 +3368,9 @@ If you are building the site via <code class="language-java highlighter-rouge"><
     <div class="d-flex flex-wrap mt-3 mb-1 me-3">
       
         
+        <a class="post-tag" href="/tags/exception/">exception</a>
+      
+        
         <a class="post-tag" href="/tags/typography/">typography</a>
       
         
@@ -3116,6 +3378,12 @@ If you are building the site via <code class="language-java highlighter-rouge"><
       
         
         <a class="post-tag" href="/tags/getting-started/">getting started</a>
+      
+        
+        <a class="post-tag" href="/tags/spring-boot-3/">spring boot 3</a>
+      
+        
+        <a class="post-tag" href="/tags/vue-js/">vue.js</a>
       
         
         <a class="post-tag" href="/tags/writing/">writing</a>
