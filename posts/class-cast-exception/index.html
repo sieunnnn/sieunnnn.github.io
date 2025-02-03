@@ -932,7 +932,7 @@
   <header>
     <h1 data-toc-skip>ClassCastException - 왜 Optional 을 사용할 수 없을까?</h1>
     
-      <p class="post-desc fw-light mb-4">왜 User 는 Optional<T> 로 casting 될 수 없는걸까. 그냥 해주면 안되는걸까.</p>
+      <p class="post-desc fw-light mb-4">왜 User 는 Optional 로 casting 될 수 없는걸까. 그냥 해주면 안되는걸까.</p>
     
 
     <div class="post-meta text-muted d-flex justify-content-between">
@@ -1080,16 +1080,16 @@
 <p><br />
 <br /></p>
 
-<h2 id="2-왜-optional-로-casting-될-수-없나요"><span class="me-2">2. 왜 Optional<T> 로 casting 될 수 없나요?</T></span><a href="#2-왜-optional-로-casting-될-수-없나요" class="anchor text-muted" style="text-decoration-line: none !important;" >
+<h2 id="2-왜-optionalt-로-casting-될-수-없나요"><span class="me-2">2. 왜 Optional&lt;T&gt; 로 casting 될 수 없나요?</span><a href="#2-왜-optionalt-로-casting-될-수-없나요" class="anchor text-muted" style="text-decoration-line: none !important;" >
            <img src="/assets/img/icons/mouse.png" width="18px" style="margin-bottom: 3px !important;"/>
       </a></h2>
 
-<p>Optional<T> 은 null 이 올 수 있는 값을 감싸는 Wrapper 클래스 입니다. 이를 통해 _NullPointerException_ 을 방지할 수 있습니다. 또한 각종 메서드를 제공하기도 하죠. 그럼 casting 은 뭘까요? casting 은 특정한 객체가 다른 유형의 instance 인 것처럼 처리되어야 함을 컴파일러에게 알리는 방법 입니다. 단, 이 프로세스는 실제로 cast 되는 객체가 대상 유형 혹은 하위 클래스의 instance 인 경우에만 작동합니다.</T></p>
+<p>Optional&lt;T&gt; 은 null 이 올 수 있는 값을 감싸는 Wrapper 클래스 입니다. 이를 통해 <em>NullPointerException</em> 을 방지할 수 있습니다. 또한 각종 메서드를 제공하기도 하죠. 그럼 casting 은 뭘까요? casting 은 특정한 객체가 다른 유형의 instance 인 것처럼 처리되어야 함을 컴파일러에게 알리는 방법 입니다. 단, 이 프로세스는 실제로 cast 되는 객체가 대상 유형 혹은 하위 클래스의 instance 인 경우에만 작동합니다.</p>
 
-<p>Opitonal<T> 안에는 객체가 들어가니까 casting 될 수 있는거 아닌가? 라고 생각할 수도 있습니다. Optional<T>의 T 또는 일반 유형은 모든 유형의 객체에 대한 자리 표시자 입니다. 객체 자체가 아니라 나중에 지정하게 될 유형을 나타내는 기호라는 점에서 우리가 일반적으로 생각하는 객체가 아닙니다.</T></T></p>
+<p>Opitonal&lt;T&gt; 안에는 객체가 들어가니까 casting 될 수 있는거 아닌가? 라고 생각할 수도 있습니다. Optional&lt;T&gt;의 T 또는 일반 유형은 모든 유형의 객체에 대한 자리 표시자 입니다. 객체 자체가 아니라 나중에 지정하게 될 유형을 나타내는 기호라는 점에서 우리가 일반적으로 생각하는 객체가 아닙니다.</p>
 
-<p>즉, 객체는 구조와 목적이 근본적으로 다르기 때문에 Optional<T>로 직접 처리할 수 없습니다. 객체는 무엇이든 될 수 있지만 Optional<T>는 특히 T 유형 객체의 컨테이너 이기 때문이죠. _(비유하자면 객체 와 T 는 사과, Optional<T> 는 사과가 들어있는 박스라고 할 수 있습니다.)_
-그래서 아래와 같이 Optional 을 제외해주었고, 결과는 제대로 나왔습니다.</T></T></T></p>
+<p>즉, 객체는 구조와 목적이 근본적으로 다르기 때문에 Optional&lt;T&gt;로 직접 처리할 수 없습니다. 객체는 무엇이든 될 수 있지만 Optional&lt;T&gt;는 특히 T 유형 객체의 컨테이너 이기 때문이죠.  <em>(비유하자면 객체와 T 는 사과, Optional&lt;T&gt; 는 사과가 들어있는 박스라고 할 수 있습니다.)</em>
+그래서 아래와 같이 Optional 을 제외해주었고, 결과는 제대로 나왔습니다.</p>
 
 <div class="language-java highlighter-rouge"><div class="code-header" style="color: black !important;"">
         <span data-label-text="Java" style="color: black !important;"><img src="/assets/img/icons/code.png" width="21px" style="margin-right: 5px"/></span>

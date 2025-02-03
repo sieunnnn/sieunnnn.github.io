@@ -21,7 +21,7 @@
     "categories": "Spring boot, Exception",
     "tags": "exception",
     "date": "2023-11-19 12:33:00 +0900",
-    "content": "왜 User 는 Optional&lt;T&gt; 로 casting 될 수 없는걸까. 그냥 해주면 안되는걸까."
+    "content": "왜 User 는 Optional 로 casting 될 수 없는걸까. 그냥 해주면 안되는걸까."
   },
   {
     "title": "Form Login 방식으로 로그인 처리하기",
