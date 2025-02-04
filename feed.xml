@@ -4,16 +4,16 @@
   <id>https://sieunnnn.github.io/</id>
   <title>김자바의 개발일지</title>
   <subtitle>개발 하면서 학습한 내용을 정리하고 공유하기 위한 블로그 입니다.</subtitle>
-  <updated>2025-02-04T01:18:12+09:00</updated>
+  <updated>2025-02-04T14:11:43+09:00</updated>
   <author>
-    <name>SIEUNKIM</name>
+    <name>김자바</name>
     <uri>https://sieunnnn.github.io/</uri>
   </author>
   <link rel="self" type="application/atom+xml" href="https://sieunnnn.github.io/feed.xml"/>
   <link rel="alternate" type="text/html" hreflang="ko"
     href="https://sieunnnn.github.io/"/>
   <generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator>
-  <rights> © 2025 SIEUNKIM </rights>
+  <rights> © 2025 김자바 </rights>
   <icon>/assets/img/favicons/favicon.ico</icon>
   <logo>/assets/img/favicons/favicon-96x96.png</logo>
 
@@ -22,14 +22,14 @@
   <entry>
     <title></title>
     <link href="https://sieunnnn.github.io/posts/2024-04-18-setter-builder-jackson/" rel="alternate" type="text/html" title="" />
-    <published>2025-02-04T01:18:12+09:00</published>
+    <published>2025-02-04T14:11:43+09:00</published>
   
-    <updated>2025-02-04T01:18:12+09:00</updated>
+    <updated>2025-02-04T14:11:43+09:00</updated>
   
     <id>https://sieunnnn.github.io/posts/2024-04-18-setter-builder-jackson/</id>
     <content type="text/html" src="https://sieunnnn.github.io/posts/2024-04-18-setter-builder-jackson/" />
     <author>
-      <name>SIEUNKIM</name>
+      <name>김자바</name>
     </author>
 
   
@@ -44,14 +44,14 @@
   <entry>
     <title></title>
     <link href="https://sieunnnn.github.io/posts/2023-09-17-send-find-password-mail/" rel="alternate" type="text/html" title="" />
-    <published>2025-02-04T01:18:12+09:00</published>
+    <published>2025-02-04T14:11:43+09:00</published>
   
-    <updated>2025-02-04T01:18:12+09:00</updated>
+    <updated>2025-02-04T14:11:43+09:00</updated>
   
     <id>https://sieunnnn.github.io/posts/2023-09-17-send-find-password-mail/</id>
     <content type="text/html" src="https://sieunnnn.github.io/posts/2023-09-17-send-find-password-mail/" />
     <author>
-      <name>SIEUNKIM</name>
+      <name>김자바</name>
     </author>
 
   
@@ -64,27 +64,51 @@
 
   
   <entry>
-    <title>DefaultHandlerExceptionResolver</title>
-    <link href="https://sieunnnn.github.io/posts/default-handler-exception-resolver/" rel="alternate" type="text/html" title="DefaultHandlerExceptionResolver" />
-    <published>2023-12-07T12:33:00+09:00</published>
+    <title>vercel, ngrok 을 사용하여 무료로 프로젝트 배포하기</title>
+    <link href="https://sieunnnn.github.io/posts/deploy-project-free-using-vercel-and-ngrok/" rel="alternate" type="text/html" title="vercel, ngrok 을 사용하여 무료로 프로젝트 배포하기" />
+    <published>2024-08-22T12:33:00+09:00</published>
   
-    <updated>2023-12-07T12:33:00+09:00</updated>
+    <updated>2024-08-22T12:33:00+09:00</updated>
   
-    <id>https://sieunnnn.github.io/posts/default-handler-exception-resolver/</id>
-    <content type="text/html" src="https://sieunnnn.github.io/posts/default-handler-exception-resolver/" />
+    <id>https://sieunnnn.github.io/posts/deploy-project-free-using-vercel-and-ngrok/</id>
+    <content type="text/html" src="https://sieunnnn.github.io/posts/deploy-project-free-using-vercel-and-ngrok/" />
     <author>
-      <name>sieunnnn</name>
+      <name>김자바</name>
     </author>
 
   
     
-    <category term="Spring boot" />
+    <category term="Deploy" />
     
-    <category term="Exception" />
+    <category term="Project" />
     
   
 
-  <summary>Required request body is missing … 이라는 문구가 나타났다면 이곳을 방문해주세요.</summary>
+  <summary>일정기간 간단하게 배포 하는데 돈을 들이고 싶지 않다면 이글을 참고해보세요.</summary>
+
+  </entry>
+
+  
+  <entry>
+    <title>google map api 를 사용한 지도 검색과 지도 생성</title>
+    <link href="https://sieunnnn.github.io/posts/map-service-using-google-map-api/" rel="alternate" type="text/html" title="google map api 를 사용한 지도 검색과 지도 생성" />
+    <published>2024-07-15T12:33:00+09:00</published>
+  
+    <updated>2024-07-15T12:33:00+09:00</updated>
+  
+    <id>https://sieunnnn.github.io/posts/map-service-using-google-map-api/</id>
+    <content type="text/html" src="https://sieunnnn.github.io/posts/map-service-using-google-map-api/" />
+    <author>
+      <name>김자바</name>
+    </author>
+
+  
+    
+    <category term="Vue.js" />
+    
+  
+
+  <summary>서비스에 위치 검색과 동적지도를 넣는 방법을 알려드려요.</summary>
 
   </entry>
 
@@ -92,14 +116,14 @@
   <entry>
     <title>LazyInitializationException 과 SecurityContextHolder</title>
     <link href="https://sieunnnn.github.io/posts/lazy-initialization-exception/" rel="alternate" type="text/html" title="LazyInitializationException 과 SecurityContextHolder" />
-    <published>2023-11-20T12:33:00+09:00</published>
+    <published>2024-06-24T12:33:00+09:00</published>
   
-    <updated>2023-11-20T12:33:00+09:00</updated>
+    <updated>2024-06-24T12:33:00+09:00</updated>
   
     <id>https://sieunnnn.github.io/posts/lazy-initialization-exception/</id>
     <content type="text/html" src="https://sieunnnn.github.io/posts/lazy-initialization-exception/" />
     <author>
-      <name>sieunnnn</name>
+      <name>김자바</name>
     </author>
 
   
@@ -110,33 +134,7 @@
     
   
 
-  <summary>누구나 한번쯤은 본다는 LazyInitializationException 🫠</summary>
-
-  </entry>
-
-  
-  <entry>
-    <title>ClassCastException - 왜 Optional 을 사용할 수 없을까?</title>
-    <link href="https://sieunnnn.github.io/posts/class-cast-exception/" rel="alternate" type="text/html" title="ClassCastException - 왜 Optional 을 사용할 수 없을까?" />
-    <published>2023-11-19T12:33:00+09:00</published>
-  
-    <updated>2023-11-19T12:33:00+09:00</updated>
-  
-    <id>https://sieunnnn.github.io/posts/class-cast-exception/</id>
-    <content type="text/html" src="https://sieunnnn.github.io/posts/class-cast-exception/" />
-    <author>
-      <name>sieunnnn</name>
-    </author>
-
-  
-    
-    <category term="Spring boot" />
-    
-    <category term="Exception" />
-    
-  
-
-  <summary>왜 User 는 Optional 로 casting 될 수 없는걸까. 그냥 해주면 안되는걸까.</summary>
+  <summary>이전과 다른이유로 또 마주친 LazyInitializationException. @EAGER 을 사용하지 않고 해결해보자.</summary>
 
   </entry>
 

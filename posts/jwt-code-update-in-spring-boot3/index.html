@@ -31,7 +31,7 @@
   <!-- Begin Jekyll SEO tag v2.8.0 -->
 <meta name="generator" content="Jekyll v4.4.1" />
 <meta property="og:title" content="Spring boot 3 에서의 JWT 코드 변화" />
-<meta name="author" content="sieunnnn" />
+<meta name="author" content="김자바" />
 <meta property="og:locale" content="ko" />
 <meta name="description" content="JWT 를 만드려는데 갑자기 오랜지색 줄이 나타났다면 도움이 될겁니다요." />
 <meta property="og:description" content="JWT 를 만드려는데 갑자기 오랜지색 줄이 나타났다면 도움이 될겁니다요." />
@@ -44,7 +44,7 @@
       <meta property="twitter:image" content="https://sieunnnn.github.io/assets/img/profile.jpg" />
 <meta property="twitter:title" content="Spring boot 3 에서의 JWT 코드 변화" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"sieunnnn"},"dateModified":"2023-09-27T12:33:00+09:00","datePublished":"2023-09-27T12:33:00+09:00","description":"JWT 를 만드려는데 갑자기 오랜지색 줄이 나타났다면 도움이 될겁니다요.","headline":"Spring boot 3 에서의 JWT 코드 변화","mainEntityOfPage":{"@type":"WebPage","@id":"https://sieunnnn.github.io/posts/jwt-code-update-in-spring-boot3/"},"url":"https://sieunnnn.github.io/posts/jwt-code-update-in-spring-boot3/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"김자바"},"dateModified":"2023-09-27T12:33:00+09:00","datePublished":"2023-09-27T12:33:00+09:00","description":"JWT 를 만드려는데 갑자기 오랜지색 줄이 나타났다면 도움이 될겁니다요.","headline":"Spring boot 3 에서의 JWT 코드 변화","mainEntityOfPage":{"@type":"WebPage","@id":"https://sieunnnn.github.io/posts/jwt-code-update-in-spring-boot3/"},"url":"https://sieunnnn.github.io/posts/jwt-code-update-in-spring-boot3/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -1375,7 +1375,14 @@
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/default-handler-exception-resolver/">DefaultHandlerExceptionResolver</a>
+          <a href="/posts/deploy-project-free-using-vercel-and-ngrok/">vercel, ngrok 을 사용하여 무료로 프로젝트 배포하기</a>
+        </li>
+      
+        
+        
+        
+        <li class="text-truncate lh-lg">
+          <a href="/posts/map-service-using-google-map-api/">google map api 를 사용한 지도 검색과 지도 생성</a>
         </li>
       
         
@@ -1383,13 +1390,6 @@
         
         <li class="text-truncate lh-lg">
           <a href="/posts/lazy-initialization-exception/">LazyInitializationException 과 SecurityContextHolder</a>
-        </li>
-      
-        
-        
-        
-        <li class="text-truncate lh-lg">
-          <a href="/posts/class-cast-exception/">ClassCastException - 왜 Optional 을 사용할 수 없을까?</a>
         </li>
       
     </ul>
@@ -1428,25 +1428,6 @@
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -1486,75 +1467,6 @@
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
   
     
     
@@ -1579,10 +1491,31 @@
     
     
     
-      
-        
-        
-
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
   
     
     
@@ -1594,24 +1527,6 @@
     
     
     
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
     
   
     
@@ -1647,7 +1562,30 @@
     
     
     
-      
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
     
   
     
@@ -1681,7 +1619,540 @@
     
     
     
+  
+    
+    
+    
+    
       
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
     
   
     
@@ -1702,28 +2173,31 @@
         <a class="post-tag" href="/tags/exception/">exception</a>
       
         
-        <a class="post-tag" href="/tags/security/">security</a>
-      
-        
         <a class="post-tag" href="/tags/github-actions/">github actions</a>
       
         
-        <a class="post-tag" href="/tags/jwt/">JWT</a>
+        <a class="post-tag" href="/tags/security/">security</a>
       
         
         <a class="post-tag" href="/tags/%EC%9E%90%EB%8F%99%EB%B0%B0%ED%8F%AC/">자동배포</a>
       
         
-        <a class="post-tag" href="/tags/cloud/">cloud</a>
+        <a class="post-tag" href="/tags/docker/">docker</a>
       
         
-        <a class="post-tag" href="/tags/cool-sms/">cool-sms</a>
+        <a class="post-tag" href="/tags/stomp/">stomp</a>
+      
+        
+        <a class="post-tag" href="/tags/websocket/">websocket</a>
+      
+        
+        <a class="post-tag" href="/tags/%ED%98%91%EC%97%85/">협업</a>
+      
+        
+        <a class="post-tag" href="/tags/jwt/">JWT</a>
       
         
         <a class="post-tag" href="/tags/spring-boot-3/">spring boot 3</a>
-      
-        
-        <a class="post-tag" href="/tags/vue-js/">vue.js</a>
       
     </div>
   </section>
@@ -1828,7 +2302,103 @@
   
 
   
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
     
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
   
 
   
@@ -1920,6 +2490,34 @@
         </article>
       
         <article class="col">
+          <a href="/posts/record-and-dto/" class="post-preview card h-100">
+            <div class="card-body">
+              <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+<time
+  
+  data-ts="1713497580"
+  data-df="ll"
+  
+>
+  Apr 19, 2024
+</time>
+
+              <h4 class="pt-0 my-2">Record 와 DTO</h4>
+              <div class="text-muted">
+                <p>자바 버전을 올렸는데 Record 가 생겼어요.</p>
+              </div>
+            </div>
+          </a>
+        </article>
+      
+        <article class="col">
           <a href="/posts/default-handler-exception-resolver/" class="post-preview card h-100">
             <div class="card-body">
               <!--
@@ -1942,34 +2540,6 @@
               <h4 class="pt-0 my-2">DefaultHandlerExceptionResolver</h4>
               <div class="text-muted">
                 <p>Required request body is missing … 이라는 문구가 나타났다면 이곳을 방문해주세요.</p>
-              </div>
-            </div>
-          </a>
-        </article>
-      
-        <article class="col">
-          <a href="/posts/lazy-initialization-exception/" class="post-preview card h-100">
-            <div class="card-body">
-              <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-<time
-  
-  data-ts="1700451180"
-  data-df="ll"
-  
->
-  Nov 20, 2023
-</time>
-
-              <h4 class="pt-0 my-2">LazyInitializationException 과 SecurityContextHolder</h4>
-              <div class="text-muted">
-                <p>누구나 한번쯤은 본다는 LazyInitializationException 🫠</p>
               </div>
             </div>
           </a>
@@ -2024,7 +2594,7 @@
     <time>2025</time>
 
     
-      <a href="https://github.com/sieunnnn">SIEUNKIM</a>.
+      <a href="https://github.com/sieunnnn">김자바</a>.
     
 
     
@@ -2086,25 +2656,6 @@
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -2144,75 +2695,6 @@
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
   
     
     
@@ -2237,10 +2719,31 @@
     
     
     
-      
-        
-        
-
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
   
     
     
@@ -2252,24 +2755,6 @@
     
     
     
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
     
   
     
@@ -2305,7 +2790,30 @@
     
     
     
-      
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
     
   
     
@@ -2339,7 +2847,540 @@
     
     
     
+  
+    
+    
+    
+    
       
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
     
   
     
@@ -2360,28 +3401,31 @@
         <a class="post-tag" href="/tags/exception/">exception</a>
       
         
-        <a class="post-tag" href="/tags/security/">security</a>
-      
-        
         <a class="post-tag" href="/tags/github-actions/">github actions</a>
       
         
-        <a class="post-tag" href="/tags/jwt/">JWT</a>
+        <a class="post-tag" href="/tags/security/">security</a>
       
         
         <a class="post-tag" href="/tags/%EC%9E%90%EB%8F%99%EB%B0%B0%ED%8F%AC/">자동배포</a>
       
         
-        <a class="post-tag" href="/tags/cloud/">cloud</a>
+        <a class="post-tag" href="/tags/docker/">docker</a>
       
         
-        <a class="post-tag" href="/tags/cool-sms/">cool-sms</a>
+        <a class="post-tag" href="/tags/stomp/">stomp</a>
+      
+        
+        <a class="post-tag" href="/tags/websocket/">websocket</a>
+      
+        
+        <a class="post-tag" href="/tags/%ED%98%91%EC%97%85/">협업</a>
+      
+        
+        <a class="post-tag" href="/tags/jwt/">JWT</a>
       
         
         <a class="post-tag" href="/tags/spring-boot-3/">spring boot 3</a>
-      
-        
-        <a class="post-tag" href="/tags/vue-js/">vue.js</a>
       
     </div>
   </section>

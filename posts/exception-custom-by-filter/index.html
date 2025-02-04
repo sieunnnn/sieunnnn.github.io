@@ -31,7 +31,7 @@
   <!-- Begin Jekyll SEO tag v2.8.0 -->
 <meta name="generator" content="Jekyll v4.4.1" />
 <meta property="og:title" content="Filter 에 따른 Exception Custom - EntryPoint 란?" />
-<meta name="author" content="sieunnnn" />
+<meta name="author" content="김자바" />
 <meta property="og:locale" content="ko" />
 <meta name="description" content="필터의 위를 알아야 제대로 된 예외처리를 해줄 수 있습니다. 예외처리를 하는 이유와 EntryPoint 에 대해 알아봅시다." />
 <meta property="og:description" content="필터의 위를 알아야 제대로 된 예외처리를 해줄 수 있습니다. 예외처리를 하는 이유와 EntryPoint 에 대해 알아봅시다." />
@@ -44,7 +44,7 @@
       <meta property="twitter:image" content="https://sieunnnn.github.io/assets/img/profile.jpg" />
 <meta property="twitter:title" content="Filter 에 따른 Exception Custom - EntryPoint 란?" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"sieunnnn"},"dateModified":"2023-08-31T12:33:00+09:00","datePublished":"2023-08-31T12:33:00+09:00","description":"필터의 위를 알아야 제대로 된 예외처리를 해줄 수 있습니다. 예외처리를 하는 이유와 EntryPoint 에 대해 알아봅시다.","headline":"Filter 에 따른 Exception Custom - EntryPoint 란?","mainEntityOfPage":{"@type":"WebPage","@id":"https://sieunnnn.github.io/posts/exception-custom-by-filter/"},"url":"https://sieunnnn.github.io/posts/exception-custom-by-filter/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"김자바"},"dateModified":"2023-08-31T12:33:00+09:00","datePublished":"2023-08-31T12:33:00+09:00","description":"필터의 위를 알아야 제대로 된 예외처리를 해줄 수 있습니다. 예외처리를 하는 이유와 EntryPoint 에 대해 알아봅시다.","headline":"Filter 에 따른 Exception Custom - EntryPoint 란?","mainEntityOfPage":{"@type":"WebPage","@id":"https://sieunnnn.github.io/posts/exception-custom-by-filter/"},"url":"https://sieunnnn.github.io/posts/exception-custom-by-filter/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -1702,7 +1702,14 @@ org.springframework.security.web.access.intercept.AuthorizationFilter@4dd28982
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/default-handler-exception-resolver/">DefaultHandlerExceptionResolver</a>
+          <a href="/posts/deploy-project-free-using-vercel-and-ngrok/">vercel, ngrok 을 사용하여 무료로 프로젝트 배포하기</a>
+        </li>
+      
+        
+        
+        
+        <li class="text-truncate lh-lg">
+          <a href="/posts/map-service-using-google-map-api/">google map api 를 사용한 지도 검색과 지도 생성</a>
         </li>
       
         
@@ -1710,13 +1717,6 @@ org.springframework.security.web.access.intercept.AuthorizationFilter@4dd28982
         
         <li class="text-truncate lh-lg">
           <a href="/posts/lazy-initialization-exception/">LazyInitializationException 과 SecurityContextHolder</a>
-        </li>
-      
-        
-        
-        
-        <li class="text-truncate lh-lg">
-          <a href="/posts/class-cast-exception/">ClassCastException - 왜 Optional 을 사용할 수 없을까?</a>
         </li>
       
     </ul>
@@ -1755,25 +1755,6 @@ org.springframework.security.web.access.intercept.AuthorizationFilter@4dd28982
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -1813,75 +1794,6 @@ org.springframework.security.web.access.intercept.AuthorizationFilter@4dd28982
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
   
     
     
@@ -1906,10 +1818,31 @@ org.springframework.security.web.access.intercept.AuthorizationFilter@4dd28982
     
     
     
-      
-        
-        
-
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
   
     
     
@@ -1921,24 +1854,6 @@ org.springframework.security.web.access.intercept.AuthorizationFilter@4dd28982
     
     
     
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
     
   
     
@@ -1974,7 +1889,30 @@ org.springframework.security.web.access.intercept.AuthorizationFilter@4dd28982
     
     
     
-      
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
     
   
     
@@ -2008,7 +1946,540 @@ org.springframework.security.web.access.intercept.AuthorizationFilter@4dd28982
     
     
     
+  
+    
+    
+    
+    
       
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
     
   
     
@@ -2029,28 +2500,31 @@ org.springframework.security.web.access.intercept.AuthorizationFilter@4dd28982
         <a class="post-tag" href="/tags/exception/">exception</a>
       
         
-        <a class="post-tag" href="/tags/security/">security</a>
-      
-        
         <a class="post-tag" href="/tags/github-actions/">github actions</a>
       
         
-        <a class="post-tag" href="/tags/jwt/">JWT</a>
+        <a class="post-tag" href="/tags/security/">security</a>
       
         
         <a class="post-tag" href="/tags/%EC%9E%90%EB%8F%99%EB%B0%B0%ED%8F%AC/">자동배포</a>
       
         
-        <a class="post-tag" href="/tags/cloud/">cloud</a>
+        <a class="post-tag" href="/tags/docker/">docker</a>
       
         
-        <a class="post-tag" href="/tags/cool-sms/">cool-sms</a>
+        <a class="post-tag" href="/tags/stomp/">stomp</a>
+      
+        
+        <a class="post-tag" href="/tags/websocket/">websocket</a>
+      
+        
+        <a class="post-tag" href="/tags/%ED%98%91%EC%97%85/">협업</a>
+      
+        
+        <a class="post-tag" href="/tags/jwt/">JWT</a>
       
         
         <a class="post-tag" href="/tags/spring-boot-3/">spring boot 3</a>
-      
-        
-        <a class="post-tag" href="/tags/vue-js/">vue.js</a>
       
     </div>
   </section>
@@ -2119,7 +2593,103 @@ org.springframework.security.web.access.intercept.AuthorizationFilter@4dd28982
   
 
   
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
     
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
   
 
   
@@ -2351,7 +2921,7 @@ org.springframework.security.web.access.intercept.AuthorizationFilter@4dd28982
     <time>2025</time>
 
     
-      <a href="https://github.com/sieunnnn">SIEUNKIM</a>.
+      <a href="https://github.com/sieunnnn">김자바</a>.
     
 
     
@@ -2413,25 +2983,6 @@ org.springframework.security.web.access.intercept.AuthorizationFilter@4dd28982
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -2471,75 +3022,6 @@ org.springframework.security.web.access.intercept.AuthorizationFilter@4dd28982
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
   
     
     
@@ -2564,10 +3046,31 @@ org.springframework.security.web.access.intercept.AuthorizationFilter@4dd28982
     
     
     
-      
-        
-        
-
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
   
     
     
@@ -2579,24 +3082,6 @@ org.springframework.security.web.access.intercept.AuthorizationFilter@4dd28982
     
     
     
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
     
   
     
@@ -2632,7 +3117,30 @@ org.springframework.security.web.access.intercept.AuthorizationFilter@4dd28982
     
     
     
-      
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
     
   
     
@@ -2666,7 +3174,540 @@ org.springframework.security.web.access.intercept.AuthorizationFilter@4dd28982
     
     
     
+  
+    
+    
+    
+    
       
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
     
   
     
@@ -2687,28 +3728,31 @@ org.springframework.security.web.access.intercept.AuthorizationFilter@4dd28982
         <a class="post-tag" href="/tags/exception/">exception</a>
       
         
-        <a class="post-tag" href="/tags/security/">security</a>
-      
-        
         <a class="post-tag" href="/tags/github-actions/">github actions</a>
       
         
-        <a class="post-tag" href="/tags/jwt/">JWT</a>
+        <a class="post-tag" href="/tags/security/">security</a>
       
         
         <a class="post-tag" href="/tags/%EC%9E%90%EB%8F%99%EB%B0%B0%ED%8F%AC/">자동배포</a>
       
         
-        <a class="post-tag" href="/tags/cloud/">cloud</a>
+        <a class="post-tag" href="/tags/docker/">docker</a>
       
         
-        <a class="post-tag" href="/tags/cool-sms/">cool-sms</a>
+        <a class="post-tag" href="/tags/stomp/">stomp</a>
+      
+        
+        <a class="post-tag" href="/tags/websocket/">websocket</a>
+      
+        
+        <a class="post-tag" href="/tags/%ED%98%91%EC%97%85/">협업</a>
+      
+        
+        <a class="post-tag" href="/tags/jwt/">JWT</a>
       
         
         <a class="post-tag" href="/tags/spring-boot-3/">spring boot 3</a>
-      
-        
-        <a class="post-tag" href="/tags/vue-js/">vue.js</a>
       
     </div>
   </section>

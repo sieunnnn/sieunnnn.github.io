@@ -31,20 +31,20 @@
   <!-- Begin Jekyll SEO tag v2.8.0 -->
 <meta name="generator" content="Jekyll v4.4.1" />
 <meta property="og:title" content="LazyInitializationException 과 SecurityContextHolder" />
-<meta name="author" content="sieunnnn" />
+<meta name="author" content="김자바" />
 <meta property="og:locale" content="ko" />
-<meta name="description" content="누구나 한번쯤은 본다는 LazyInitializationException 🫠" />
-<meta property="og:description" content="누구나 한번쯤은 본다는 LazyInitializationException 🫠" />
+<meta name="description" content="이전과 다른이유로 또 마주친 LazyInitializationException. @EAGER 을 사용하지 않고 해결해보자." />
+<meta property="og:description" content="이전과 다른이유로 또 마주친 LazyInitializationException. @EAGER 을 사용하지 않고 해결해보자." />
 <link rel="canonical" href="https://sieunnnn.github.io/posts/lazy-initialization-exception/" />
 <meta property="og:url" content="https://sieunnnn.github.io/posts/lazy-initialization-exception/" />
 <meta property="og:site_name" content="김자바의 개발일지" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2023-11-20T12:33:00+09:00" />
+<meta property="article:published_time" content="2024-06-24T12:33:00+09:00" />
 <meta property="og:image" content="https://sieunnnn.github.io/assets/img/profile.jpg" /><meta name="twitter:card" content="summary_large_image" />
       <meta property="twitter:image" content="https://sieunnnn.github.io/assets/img/profile.jpg" />
 <meta property="twitter:title" content="LazyInitializationException 과 SecurityContextHolder" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"sieunnnn"},"dateModified":"2023-11-20T12:33:00+09:00","datePublished":"2023-11-20T12:33:00+09:00","description":"누구나 한번쯤은 본다는 LazyInitializationException 🫠","headline":"LazyInitializationException 과 SecurityContextHolder","mainEntityOfPage":{"@type":"WebPage","@id":"https://sieunnnn.github.io/posts/lazy-initialization-exception/"},"url":"https://sieunnnn.github.io/posts/lazy-initialization-exception/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"김자바"},"dateModified":"2024-06-24T12:33:00+09:00","datePublished":"2024-06-24T12:33:00+09:00","description":"이전과 다른이유로 또 마주친 LazyInitializationException. @EAGER 을 사용하지 않고 해결해보자.","headline":"LazyInitializationException 과 SecurityContextHolder","mainEntityOfPage":{"@type":"WebPage","@id":"https://sieunnnn.github.io/posts/lazy-initialization-exception/"},"url":"https://sieunnnn.github.io/posts/lazy-initialization-exception/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -715,6 +715,20 @@
     
       
 
+      
+        
+        
+<!--        -->
+      
+
+      
+
+      
+    
+  
+    
+      
+
     
   
 
@@ -760,6 +774,17 @@
 
       
     
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
 
     
   
@@ -775,6 +800,17 @@
       
         
         
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
       
 
       
@@ -827,7 +863,7 @@
   <header>
     <h1 data-toc-skip>LazyInitializationException 과 SecurityContextHolder</h1>
     
-      <p class="post-desc fw-light mb-4">누구나 한번쯤은 본다는 LazyInitializationException 🫠</p>
+      <p class="post-desc fw-light mb-4">이전과 다른이유로 또 마주친 LazyInitializationException. @EAGER 을 사용하지 않고 해결해보자.</p>
     
 
     <div class="post-meta text-muted d-flex justify-content-between">
@@ -844,13 +880,13 @@
 
 <time
   
-  data-ts="1700451180"
+  data-ts="1719199980"
   data-df="ll"
   
     data-bs-toggle="tooltip" data-bs-placement="bottom"
   
 >
-  Nov 20, 2023
+  Jun 24, 2024
 </time>
 
       </span>
@@ -879,9 +915,9 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="665 words"
+  title="1545 words"
 >
-  <em>3 min</em> read</span>
+  <em>8 min</em> read</span>
 
         </div>
   </header>
@@ -911,11 +947,72 @@
 <!--  -->
 
   <div class="content">
-    <h2 id="1-lazyinitializationexception"><span class="me-2">1. LazyInitializationException</span><a href="#1-lazyinitializationexception" class="anchor text-muted" style="text-decoration-line: none !important;" >
+    <h2 id="1-lazyinitializationexception-의-발생"><span class="me-2">1. LazyInitializationException 의 발생</span><a href="#1-lazyinitializationexception-의-발생" class="anchor text-muted" style="text-decoration-line: none !important;" >
            <img src="/assets/img/icons/mouse.png" width="18px" style="margin-bottom: 3px !important;"/>
       </a></h2>
 
-<p>현재 로그인한 유저의 유저 객체를 <em>getLoginUser()</em> 로 꺼내서 쓰려고 했는데…</p>
+<p>소셜로그인 코드를 작성하고 실행했더니 아래와 같은 오류가 나타났습니다. 다들 한번쯤은 겪는다는 LazyInitalizationException 이였는데요, 왜 이런 오류가 발생했던 걸까요? 🤔</p>
+
+<div class="language-console highlighter-rouge"><div class="code-header" style="color: black !important;"">
+        <span data-label-text="Console" style="color: black !important;"><img src="/assets/img/icons/code.png" width="21px" style="margin-right: 5px"/></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><img src="/assets/img/icons/copy.png" width="19px" style="margin-bottom: 4px"/></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+</pre></td><td class="rouge-code"><pre><span class="gp">2024-06-24T13:57:32.112+09:00 DEBUG 15460 --- [nio-8080-exec-3] o.s.web.client.RestTemplate              : Reading to [java.util.Map&lt;java.lang.String, java.lang.Object&gt;</span><span class="o">]</span>
+<span class="go">2024-06-24T13:57:32.113+09:00  INFO 15460 --- [nio-8080-exec-3] c.p.t.g.a.o.s.CustomOAuth2UserService    : ============================================================================
+2024-06-24T13:57:32.113+09:00  INFO 15460 --- [nio-8080-exec-3] c.p.t.g.a.o.s.CustomOAuth2UserService    : getAttributes: {sub=107260565118160509484, name=김시은, given_name=시은, family_name=김, picture=https://lh3.googleusercontent.com/a/ACg8ocJS5We9Pzn4BvwlL4vnypALLCHvg3VrHNLkOFRL0SZ8XwX5gA=s96-c, email=wldsmtldsm65@gmail.com, email_verified=true}
+2024-06-24T13:57:32.113+09:00  INFO 15460 --- [nio-8080-exec-3] c.p.t.g.a.o.s.CustomOAuth2UserService    : ============================================================================
+2024-06-24T13:57:32.113+09:00  INFO 15460 --- [nio-8080-exec-3] c.p.t.g.a.o.e.OAuth2UserInfoFactory      : =============================================================
+2024-06-24T13:57:32.113+09:00  INFO 15460 --- [nio-8080-exec-3] c.p.t.g.a.o.e.OAuth2UserInfoFactory      : Google login Request sent
+2024-06-24T13:57:32.113+09:00  INFO 15460 --- [nio-8080-exec-3] c.p.t.g.a.o.e.OAuth2UserInfoFactory      : =============================================================
+Hibernate: select u1_0.id,u1_0.birthday,u1_0.email,u1_0.is_withdrawal,u1_0.nickname,u1_0.password,u1_0.profile_id,u1_0.provider,u1_0.role,u1_0.sex,u1_0.signup_date,u1_0.user_tag from user u1_0 where u1_0.email=? and u1_0.provider=?
+2024-06-24T13:57:32.135+09:00 DEBUG 15460 --- [nio-8080-exec-3] .s.ChangeSessionIdAuthenticationStrategy : Changed session id from 9390C8B22997E5E31616A5D9A48C061A
+2024-06-24T13:57:32.135+09:00 DEBUG 15460 --- [nio-8080-exec-3] .s.o.c.w.OAuth2LoginAuthenticationFilter : Set SecurityContextHolder to OAuth2AuthenticationToken [Principal=com.planner.travel.global.auth.oauth.entity.CustomOAuth2User@2459db7b, Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=9390C8B22997E5E31616A5D9A48C061A], Granted Authorities=[ROLE_USER]]
+2024-06-24T13:57:32.136+09:00  INFO 15460 --- [nio-8080-exec-3] a.o.h.OAuth2AuthenticationSuccessHandler : ============================================================================
+2024-06-24T13:57:32.136+09:00  INFO 15460 --- [nio-8080-exec-3] a.o.h.OAuth2AuthenticationSuccessHandler : Social login successful. Social type is google
+2024-06-24T13:57:32.136+09:00  INFO 15460 --- [nio-8080-exec-3] a.o.h.OAuth2AuthenticationSuccessHandler : ============================================================================
+2024-06-24T13:57:32.139+09:00 ERROR 15460 --- [nio-8080-exec-3] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception
+
+</span><span class="gp">org.hibernate.LazyInitializationException: could not initialize proxy [com.planner.travel.domain.profile.entity.Profile#</span>2] - no Session
+<span class="go">	at org.hibernate.proxy.AbstractLazyInitializer.initialize(AbstractLazyInitializer.java:165) ~[hibernate-core-6.4.4.Final.jar:6.4.4.Final]
+	at org.hibernate.proxy.AbstractLazyInitializer.getImplementation(AbstractLazyInitializer.java:314) ~[hibernate-core-6.4.4.Final.jar:6.4.4.Final]
+	at org.hibernate.proxy.pojo.bytebuddy.ByteBuddyInterceptor.intercept(ByteBuddyInterceptor.java:44) ~[hibernate-core-6.4.4.Final.jar:6.4.4.Final]
+</span><span class="gp">	at org.hibernate.proxy.ProxyConfiguration$</span>InterceptorDispatcher.intercept<span class="o">(</span>ProxyConfiguration.java:102<span class="o">)</span> ~[hibernate-core-6.4.4.Final.jar:6.4.4.Final]
+<span class="gp">	at com.planner.travel.domain.profile.entity.Profile$</span>HibernateProxy<span class="nv">$MzhvZwtd</span>.getProfileImageUrl<span class="o">(</span>Unknown Source<span class="o">)</span> ~[main/:na]
+<span class="go">	at com.planner.travel.global.auth.oauth.handler.OAuth2AuthenticationSuccessHandler.setRedirectUrl(OAuth2AuthenticationSuccessHandler.java:69) ~[main/:na]
+	at com.planner.travel.global.auth.oauth.handler.OAuth2AuthenticationSuccessHandler.onAuthenticationSuccess(OAuth2AuthenticationSuccessHandler.java:58) ~[main/:na]
+
+</span></pre></td></tr></tbody></table></code></div></div>
+
+<p><br />
+<br /></p>
+
+<h2 id="2-profileimageurl-호출-시-exception-발생-"><span class="me-2">2. profileImageUrl 호출 시 Exception 발생! 🤢</span><a href="#2-profileimageurl-호출-시-exception-발생-" class="anchor text-muted" style="text-decoration-line: none !important;" >
+           <img src="/assets/img/icons/mouse.png" width="18px" style="margin-bottom: 3px !important;"/>
+      </a></h2>
+
+<p>CustomOAuth2User 에서 User 엔티티는 정상적으로 불러 온다는 것을 확인했습니다. 하지만 User 와 관련된 Profile 의 필드 값에 접근할 때 LazyInitalizationException 이 발생하였습니다.</p>
 
 <div class="language-java highlighter-rouge"><div class="code-header" style="color: black !important;"">
         <span data-label-text="Java" style="color: black !important;"><img src="/assets/img/icons/code.png" width="21px" style="margin-right: 5px"/></span>
@@ -935,59 +1032,168 @@
 14
 15
 16
-</pre></td><td class="rouge-code"><pre><span class="kd">public</span> <span class="kd">class</span> <span class="nc">AuthUtil</span> <span class="o">{</span>
-    <span class="kd">private</span> <span class="kd">final</span> <span class="nc">TokenUtil</span> <span class="n">tokenUtil</span><span class="o">;</span>
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+</pre></td><td class="rouge-code"><pre><span class="nd">@Slf4j</span>
+<span class="nd">@Component</span>
+<span class="nd">@RequiredArgsConstructor</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">OAuth2AuthenticationSuccessHandler</span> <span class="kd">extends</span> <span class="nc">SimpleUrlAuthenticationSuccessHandler</span> <span class="o">{</span>
+    <span class="kd">private</span> <span class="nc">String</span> <span class="no">PRE_FRONT_REDIRECT_URL</span> <span class="o">=</span> <span class="s">"http://localhost:5173"</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="kd">final</span> <span class="nc">ObjectMapper</span> <span class="n">objectMapper</span><span class="o">;</span>
     <span class="kd">private</span> <span class="kd">final</span> <span class="nc">UserRepository</span> <span class="n">userRepository</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="kd">final</span> <span class="nc">TokenGenerator</span> <span class="n">tokenGenerator</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="kd">final</span> <span class="nc">CookieUtil</span> <span class="n">cookieUtil</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="kd">final</span> <span class="nc">RedisUtil</span> <span class="n">redisUtil</span><span class="o">;</span>
 
-    <span class="kd">public</span> <span class="nc">Long</span> <span class="nf">getLoginUserIndex</span><span class="o">()</span> <span class="o">{</span>
-        <span class="nc">User</span> <span class="n">user</span> <span class="o">=</span> <span class="n">getLoginUser</span><span class="o">();</span>
-        <span class="nc">Long</span> <span class="n">userId</span> <span class="o">=</span> <span class="n">user</span><span class="o">.</span><span class="na">getId</span><span class="o">();</span>
-        <span class="k">return</span> <span class="n">userId</span><span class="o">;</span>
+    <span class="nd">@Override</span>
+    <span class="nd">@Transactional</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onAuthenticationSuccess</span><span class="o">(</span><span class="nc">HttpServletRequest</span> <span class="n">request</span><span class="o">,</span> <span class="nc">HttpServletResponse</span> <span class="n">response</span><span class="o">,</span> <span class="nc">Authentication</span> <span class="n">authentication</span><span class="o">)</span> <span class="kd">throws</span> <span class="nc">IOException</span><span class="o">,</span> <span class="nc">ServletException</span> <span class="o">{</span>
+        <span class="nc">CustomOAuth2User</span> <span class="n">customOAuth2User</span> <span class="o">=</span> <span class="o">(</span><span class="nc">CustomOAuth2User</span><span class="o">)</span> <span class="n">authentication</span><span class="o">.</span><span class="na">getPrincipal</span><span class="o">();</span>
+        <span class="nc">String</span> <span class="n">provider</span> <span class="o">=</span> <span class="n">customOAuth2User</span><span class="o">.</span><span class="na">getUser</span><span class="o">().</span><span class="na">getProvider</span><span class="o">();</span>
+<span class="c1">//        String email = getEmailByProvider(provider, customOAuth2User);</span>
+
+        <span class="k">if</span> <span class="o">(</span><span class="n">response</span><span class="o">.</span><span class="na">isCommitted</span><span class="o">())</span> <span class="o">{</span>
+            <span class="n">log</span><span class="o">.</span><span class="na">info</span><span class="o">(</span><span class="s">"============================================================================"</span><span class="o">);</span>
+            <span class="n">log</span><span class="o">.</span><span class="na">info</span><span class="o">(</span><span class="s">"Social login response has been successfully sent."</span><span class="o">);</span>
+            <span class="n">log</span><span class="o">.</span><span class="na">info</span><span class="o">(</span><span class="s">"============================================================================"</span><span class="o">);</span>
+        <span class="o">}</span>
+
+        <span class="n">log</span><span class="o">.</span><span class="na">info</span><span class="o">(</span><span class="s">"============================================================================"</span><span class="o">);</span>
+        <span class="n">log</span><span class="o">.</span><span class="na">info</span><span class="o">(</span><span class="s">"Social login successful. Social type is {}"</span><span class="o">,</span> <span class="n">provider</span><span class="o">);</span>
+        <span class="n">log</span><span class="o">.</span><span class="na">info</span><span class="o">(</span><span class="s">"============================================================================"</span><span class="o">);</span>
+
+        <span class="nc">String</span> <span class="n">accessToken</span> <span class="o">=</span> <span class="n">tokenGenerator</span><span class="o">.</span><span class="na">generateToken</span><span class="o">(</span><span class="nc">TokenType</span><span class="o">.</span><span class="na">ACCESS</span><span class="o">,</span> <span class="nc">String</span><span class="o">.</span><span class="na">valueOf</span><span class="o">(</span><span class="n">customOAuth2User</span><span class="o">.</span><span class="na">getUser</span><span class="o">().</span><span class="na">getId</span><span class="o">()));</span>
+        <span class="nc">String</span> <span class="n">refreshToken</span> <span class="o">=</span> <span class="n">tokenGenerator</span><span class="o">.</span><span class="na">generateToken</span><span class="o">(</span><span class="nc">TokenType</span><span class="o">.</span><span class="na">REFRESH</span><span class="o">,</span> <span class="nc">String</span><span class="o">.</span><span class="na">valueOf</span><span class="o">(</span><span class="n">customOAuth2User</span><span class="o">.</span><span class="na">getUser</span><span class="o">().</span><span class="na">getId</span><span class="o">()));</span>
+
+        <span class="n">response</span><span class="o">.</span><span class="na">setHeader</span><span class="o">(</span><span class="s">"Authorization"</span><span class="o">,</span> <span class="s">"Bearer "</span> <span class="o">+</span> <span class="n">accessToken</span><span class="o">);</span>
+        <span class="n">cookieUtil</span><span class="o">.</span><span class="na">setCookie</span><span class="o">(</span><span class="s">"refreshToken"</span><span class="o">,</span> <span class="n">refreshToken</span><span class="o">,</span> <span class="n">response</span><span class="o">);</span>
+        <span class="n">redisUtil</span><span class="o">.</span><span class="na">setData</span><span class="o">(</span><span class="nc">String</span><span class="o">.</span><span class="na">valueOf</span><span class="o">(</span><span class="n">customOAuth2User</span><span class="o">.</span><span class="na">getUser</span><span class="o">().</span><span class="na">getId</span><span class="o">()),</span> <span class="n">refreshToken</span><span class="o">);</span>
+
+        <span class="nc">String</span> <span class="n">frontendRedirectUrl</span> <span class="o">=</span> <span class="n">setRedirectUrl</span><span class="o">(</span><span class="n">customOAuth2User</span><span class="o">,</span> <span class="n">accessToken</span><span class="o">);</span>
+
+        <span class="n">response</span><span class="o">.</span><span class="na">sendRedirect</span><span class="o">(</span><span class="n">frontendRedirectUrl</span><span class="o">);</span>
     <span class="o">}</span>
 
-    <span class="kd">public</span> <span class="nc">User</span> <span class="nf">getLoginUser</span><span class="o">()</span> <span class="o">{</span>
-        <span class="nc">Authentication</span> <span class="n">authentication</span> <span class="o">=</span> <span class="nc">SecurityContextHolder</span><span class="o">.</span><span class="na">getContext</span><span class="o">().</span><span class="na">getAuthentication</span><span class="o">();</span>
-        <span class="nc">Object</span> <span class="n">principal</span> <span class="o">=</span> <span class="n">authentication</span><span class="o">.</span><span class="na">getPrincipal</span><span class="o">();</span>
-        <span class="k">return</span> <span class="o">(</span><span class="nc">User</span><span class="o">)</span> <span class="n">principal</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="nc">String</span> <span class="nf">setRedirectUrl</span> <span class="o">(</span><span class="nc">CustomOAuth2User</span> <span class="n">customOAuth2User</span><span class="o">,</span> <span class="nc">String</span> <span class="n">accessToken</span><span class="o">)</span> <span class="o">{</span>
+        <span class="nc">String</span> <span class="n">encodedUserId</span> <span class="o">=</span> <span class="nc">URLEncoder</span><span class="o">.</span><span class="na">encode</span><span class="o">(</span><span class="nc">String</span><span class="o">.</span><span class="na">valueOf</span><span class="o">(</span><span class="n">customOAuth2User</span><span class="o">.</span><span class="na">getUser</span><span class="o">().</span><span class="na">getId</span><span class="o">()),</span> <span class="nc">StandardCharsets</span><span class="o">.</span><span class="na">UTF_8</span><span class="o">);</span>
+        <span class="nc">String</span> <span class="n">encodedNickname</span> <span class="o">=</span> <span class="nc">URLEncoder</span><span class="o">.</span><span class="na">encode</span><span class="o">(</span><span class="nc">String</span><span class="o">.</span><span class="na">valueOf</span><span class="o">(</span><span class="n">customOAuth2User</span><span class="o">.</span><span class="na">getUser</span><span class="o">().</span><span class="na">getNickname</span><span class="o">()),</span> <span class="nc">StandardCharsets</span><span class="o">.</span><span class="na">UTF_8</span><span class="o">);</span>
+        <span class="nc">String</span> <span class="n">encodedUserTag</span> <span class="o">=</span> <span class="nc">URLEncoder</span><span class="o">.</span><span class="na">encode</span><span class="o">(</span><span class="nc">String</span><span class="o">.</span><span class="na">valueOf</span><span class="o">(</span><span class="n">customOAuth2User</span><span class="o">.</span><span class="na">getUser</span><span class="o">().</span><span class="na">getUserTag</span><span class="o">()),</span> <span class="nc">StandardCharsets</span><span class="o">.</span><span class="na">UTF_8</span><span class="o">);</span>
+        <span class="nc">String</span> <span class="n">encodedBirthday</span> <span class="o">=</span> <span class="nc">URLEncoder</span><span class="o">.</span><span class="na">encode</span><span class="o">(</span><span class="nc">String</span><span class="o">.</span><span class="na">valueOf</span><span class="o">(</span><span class="n">customOAuth2User</span><span class="o">.</span><span class="na">getUser</span><span class="o">().</span><span class="na">getBirthday</span><span class="o">()),</span> <span class="nc">StandardCharsets</span><span class="o">.</span><span class="na">UTF_8</span><span class="o">);</span>
+        <span class="nc">String</span> <span class="n">encodedEmail</span> <span class="o">=</span> <span class="nc">URLEncoder</span><span class="o">.</span><span class="na">encode</span><span class="o">(</span><span class="nc">String</span><span class="o">.</span><span class="na">valueOf</span><span class="o">(</span><span class="n">customOAuth2User</span><span class="o">.</span><span class="na">getUser</span><span class="o">().</span><span class="na">getEmail</span><span class="o">()),</span> <span class="nc">StandardCharsets</span><span class="o">.</span><span class="na">UTF_8</span><span class="o">);</span>
+        <span class="nc">String</span> <span class="n">encodedProfileImgUrl</span> <span class="o">=</span> <span class="nc">URLEncoder</span><span class="o">.</span><span class="na">encode</span><span class="o">(</span><span class="nc">String</span><span class="o">.</span><span class="na">valueOf</span><span class="o">(</span><span class="n">customOAuth2User</span><span class="o">.</span><span class="na">getUser</span><span class="o">().</span><span class="na">getProfile</span><span class="o">().</span><span class="na">getProfileImageUrl</span><span class="o">()),</span> <span class="nc">StandardCharsets</span><span class="o">.</span><span class="na">UTF_8</span><span class="o">);</span>
+        <span class="nc">String</span> <span class="n">encodedIsBirthDay</span> <span class="o">=</span> <span class="nc">URLEncoder</span><span class="o">.</span><span class="na">encode</span><span class="o">(</span><span class="nc">String</span><span class="o">.</span><span class="na">valueOf</span><span class="o">(</span><span class="n">isBirthdayToday</span><span class="o">(</span><span class="n">customOAuth2User</span><span class="o">.</span><span class="na">getUser</span><span class="o">().</span><span class="na">getBirthday</span><span class="o">())));</span>
+        <span class="nc">String</span> <span class="n">encodedSex</span> <span class="o">=</span> <span class="nc">URLEncoder</span><span class="o">.</span><span class="na">encode</span><span class="o">(</span><span class="nc">String</span><span class="o">.</span><span class="na">valueOf</span><span class="o">(</span><span class="n">customOAuth2User</span><span class="o">.</span><span class="na">getUser</span><span class="o">().</span><span class="na">getSex</span><span class="o">()));</span>
+
+        <span class="nc">String</span> <span class="n">frontendRedirectUrl</span> <span class="o">=</span> <span class="nc">String</span><span class="o">.</span><span class="na">format</span><span class="o">(</span>
+                <span class="s">"%s/oauth/callback?token=%s&amp;userId=%s&amp;nickname=%s&amp;userTag=%s&amp;birthday=%s&amp;email=%s&amp;profileImgUrl=%s&amp;isBirthday=%s&amp;sex=%s"</span><span class="o">,</span>
+                <span class="no">PRE_FRONT_REDIRECT_URL</span><span class="o">,</span>
+                <span class="s">"Bearer "</span> <span class="o">+</span> <span class="n">accessToken</span><span class="o">,</span>
+                <span class="n">encodedUserId</span><span class="o">,</span>
+                <span class="n">encodedNickname</span><span class="o">,</span>
+                <span class="n">encodedUserTag</span><span class="o">,</span>
+                <span class="n">encodedBirthday</span><span class="o">,</span>
+                <span class="n">encodedEmail</span><span class="o">,</span>
+                <span class="n">encodedProfileImgUrl</span><span class="o">,</span>
+                <span class="n">encodedIsBirthDay</span><span class="o">,</span>
+                <span class="n">encodedSex</span>
+        <span class="o">);</span>
+
+        <span class="k">return</span> <span class="n">frontendRedirectUrl</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="kd">private</span> <span class="kt">boolean</span> <span class="nf">isBirthdayToday</span><span class="o">(</span><span class="nc">LocalDate</span> <span class="n">birthday</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="n">birthday</span> <span class="o">!=</span> <span class="kc">null</span> <span class="o">&amp;&amp;</span> <span class="n">birthday</span><span class="o">.</span><span class="na">getMonth</span><span class="o">()</span> <span class="o">==</span> <span class="nc">LocalDate</span><span class="o">.</span><span class="na">now</span><span class="o">().</span><span class="na">getMonth</span><span class="o">()</span> <span class="o">&amp;&amp;</span>
+                <span class="n">birthday</span><span class="o">.</span><span class="na">getDayOfMonth</span><span class="o">()</span> <span class="o">==</span> <span class="nc">LocalDate</span><span class="o">.</span><span class="na">now</span><span class="o">().</span><span class="na">getDayOfMonth</span><span class="o">();</span>
     <span class="o">}</span>
 <span class="o">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
-<p><em>LazyInitializationException</em> 이 발생 했습니다. 그래서 아래와 같이 새로운 코드를 작성해주니 해결 되었는데요… 🤔 도대체 왜 그랬던 걸까요?</p>
+<h3 id="21-lazyinitalizationexception-이-뭔데"><span class="me-2">2.1. LazyInitalizationException 이 뭔데?</span><a href="#21-lazyinitalizationexception-이-뭔데" class="anchor text-muted" style="text-decoration-line: none !important;" >
+           <img src="/assets/img/icons/mouse.png" width="18px" style="margin-bottom: 3px !important;"/>
+      </a></h3>
+
+<p>LazyInitializationException 은 Hibernate 에서 지연로딩된 엔티티를 세션이 종료된 후 접근하려고 할 때 발생하는 예외입니다. 성능 최적화를 위해 연관된 데이터를 실제로 필요할 때 까지 로딩하지 않는 방식이 지연 로딩인데, 이 때 Hibernate 는 연관 엔티티에 대한 참조만을 proxy 객체로 반환합니다. 이후 해당 프록시 객체의 필드에 접근하려고 할 때 데이터베이스에서 실제 데이터를 가져옵니다.하지만 이 때 세션이 이미 종료되었다면 Hibernate 는 프록시 객체를 초기화할 수 없기 때문에 예외가 발생하게 됩니다. 데이터베이스와의 연결이 끊겼기 때문이죠.</p>
+
+<h3 id="22-그래서-어떻게-해결-해야할까"><span class="me-2">2.2. 그래서 어떻게 해결 해야할까?</span><a href="#22-그래서-어떻게-해결-해야할까" class="anchor text-muted" style="text-decoration-line: none !important;" >
+           <img src="/assets/img/icons/mouse.png" width="18px" style="margin-bottom: 3px !important;"/>
+      </a></h3>
+
+<p>방법은 세가지가 있습니다. 첫번째는 User 와 Profile 의 관계에서 Fetch Type 을 Lazy 대신 EAGER 를 사용하는 것입니다. 하지만 이전에 갓영한님의 강의를 들었을 때 쓰지말라고 했으므로, 그냥 쓰지 않기로 했습니다.</p>
+
+<p>다음으로는 <code>Hibernate.initialize()</code> 를 사용하는 것입니다. 이를 사용하면 트랜잭션이 열려 있는 동안 해당 프록시를 초기화할 수 있습니다. 하지만 이 방법은 사용해 본적이 없으므로 패스.</p>
+
+<p>결론적으로 저는 마지막 방식을 사용했습니다. 이미 세션이 종료된 후라 Profile 을 초기화할 수 없는것이 문제이기 때문에 아래와 같이 User 엔티티를 다시 로드해주었습니다.</p>
 
 <div class="language-java highlighter-rouge"><div class="code-header" style="color: black !important;"">
         <span data-label-text="Java" style="color: black !important;"><img src="/assets/img/icons/code.png" width="21px" style="margin-right: 5px"/></span>
       <button aria-label="copy" data-title-succeed="Copied!"><img src="/assets/img/icons/copy.png" width="19px" style="margin-bottom: 4px"/></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
-3
-4
-5
-</pre></td><td class="rouge-code"><pre><span class="kd">public</span> <span class="nc">User</span> <span class="nf">getLoginUserForLazy</span><span class="o">()</span> <span class="o">{</span>
-    <span class="nc">Long</span> <span class="n">id</span> <span class="o">=</span> <span class="n">getLoginUserIndex</span><span class="o">();</span>
-    <span class="nc">User</span> <span class="n">user</span> <span class="o">=</span> <span class="n">userRepository</span><span class="o">.</span><span class="na">findById</span><span class="o">(</span><span class="n">id</span><span class="o">).</span><span class="na">get</span><span class="o">();</span>
-    <span class="k">return</span> <span class="n">user</span><span class="o">;</span>
-<span class="o">}</span>
+</pre></td><td class="rouge-code"><pre><span class="nc">User</span> <span class="n">user</span> <span class="o">=</span> <span class="n">userRepository</span><span class="o">.</span><span class="na">findById</span><span class="o">(</span><span class="n">customOAuth2User</span><span class="o">.</span><span class="na">getUser</span><span class="o">().</span><span class="na">getId</span><span class="o">())</span>
+                <span class="o">.</span><span class="na">orElseThrow</span><span class="o">(</span><span class="nl">EntityNotFoundException:</span><span class="o">:</span><span class="k">new</span><span class="o">);</span>
 </pre></td></tr></tbody></table></code></div></div>
+
+<p>이렇게 다시 User 엔티티를 명시적으로 로딩 했습니다. 이렇게 하면 연관된 엔티티들도 함께 로드됩니다. 결론적으로 트랜잭션 범위 내에서 이 작업이 수행되기 때문에 문제였던 예외가 발생하지 않습니다. 이는 DB 를 한번 더 타긴 하지만 성능에 큰 영향을 주지 않기 때문에 이와 같이 해결했습니다. 하지만 더 나은 방법이 있을 수도 있기에 proxy, transaction, session 에 대해 더 공부해야겠습니다.</p>
 
 <p><br />
 <br /></p>
 
-<h2 id="2-hibernate-에서의-지연-로딩과-세션"><span class="me-2">2. Hibernate 에서의 지연 로딩과 세션</span><a href="#2-hibernate-에서의-지연-로딩과-세션" class="anchor text-muted" style="text-decoration-line: none !important;" >
+<h2 id="3-최종코드"><span class="me-2">3. 최종코드</span><a href="#3-최종코드" class="anchor text-muted" style="text-decoration-line: none !important;" >
            <img src="/assets/img/icons/mouse.png" width="18px" style="margin-bottom: 3px !important;"/>
       </a></h2>
-
-<p><strong>지연 로딩</strong> 은 엔티티 또는 엔티티 컬렉션이 데이터베이스에서 즉시 로드 되지 않고 처음 요청 시 로드 되는 전략입니다. <strong>세션</strong> 은 본질적으로 엔티티가 저장되고 관리되는 컨텍스트 또는 버퍼입니다. 세션이 닫힌 후에 해당 세션 내의 초기화(로드)되지 않은 엔티티의 지연 로드 속성에 접근 하려고 하면 <em>LazyInitializationException</em> 이 발생합니다.</p>
-
-<blockquote>
-  <p>현재 로그인한 유저의 정보를 컨텍스트 홀더에서 꺼냄 → 이를 서비스 로직에서 사용하려 함 → LazyInitializationException 발생</p>
-</blockquote>
-
-<p>대략 이런 플로우 인데요. 왜 그랬을까요?</p>
-
-<h3 id="21-세션의-범위에-대해-파악하기"><span class="me-2">2.1. 세션의 범위에 대해 파악하기.</span><a href="#21-세션의-범위에-대해-파악하기" class="anchor text-muted" style="text-decoration-line: none !important;" >
-           <img src="/assets/img/icons/mouse.png" width="18px" style="margin-bottom: 3px !important;"/>
-      </a></h3>
-<p>해답은 이곳에 있습니다. 세션은 요청의 시작에서 열리며, 요청이 끝날 때 닫힙니다. 서비스 로직 에서 <em>getLoginUser()</em> 메서드를 사용해 사용자 정보를 가져오지만, 이 정보는 이전 Hibernate 세션 에서 로드 된 것입니다. 이후 Hibernate 세션은 종료되었기 때문에 연관된 엔티티에 대한 지연 로딩을 시도할 때 <em>LazyInitializationException</em> 이 발생합니다. 즉 가져온 객체를 사용하여 연관된 데이터를 가져오려 할 때 세션이 이미 닫혀 있기 때문에 필요한 데이터를 가져올 수 없습니다. 이를 위해서는 해당 객체를 다시 초기화 해줘야 합니다.</p>
 
 <div class="language-java highlighter-rouge"><div class="code-header" style="color: black !important;"">
         <span data-label-text="Java" style="color: black !important;"><img src="/assets/img/icons/code.png" width="21px" style="margin-right: 5px"/></span>
@@ -996,15 +1202,174 @@
 3
 4
 5
-</pre></td><td class="rouge-code"><pre><span class="kd">public</span> <span class="nc">User</span> <span class="nf">getLoginUserForLazy</span><span class="o">()</span> <span class="o">{</span>
-    <span class="nc">Long</span> <span class="n">id</span> <span class="o">=</span> <span class="n">getLoginUserIndex</span><span class="o">();</span>
-    <span class="nc">User</span> <span class="n">user</span> <span class="o">=</span> <span class="n">userRepository</span><span class="o">.</span><span class="na">findById</span><span class="o">(</span><span class="n">id</span><span class="o">).</span><span class="na">get</span><span class="o">();</span>
-    <span class="k">return</span> <span class="n">user</span><span class="o">;</span>
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+</pre></td><td class="rouge-code"><pre><span class="nd">@Slf4j</span>
+<span class="nd">@Component</span>
+<span class="nd">@RequiredArgsConstructor</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">OAuth2AuthenticationSuccessHandler</span> <span class="kd">extends</span> <span class="nc">SimpleUrlAuthenticationSuccessHandler</span> <span class="o">{</span>
+    <span class="kd">private</span> <span class="nc">String</span> <span class="no">PRE_FRONT_REDIRECT_URL</span> <span class="o">=</span> <span class="s">"http://localhost:5173"</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="kd">final</span> <span class="nc">ObjectMapper</span> <span class="n">objectMapper</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="kd">final</span> <span class="nc">UserRepository</span> <span class="n">userRepository</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="kd">final</span> <span class="nc">TokenGenerator</span> <span class="n">tokenGenerator</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="kd">final</span> <span class="nc">CookieUtil</span> <span class="n">cookieUtil</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="kd">final</span> <span class="nc">RedisUtil</span> <span class="n">redisUtil</span><span class="o">;</span>
+
+    <span class="nd">@Override</span>
+    <span class="nd">@Transactional</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onAuthenticationSuccess</span><span class="o">(</span><span class="nc">HttpServletRequest</span> <span class="n">request</span><span class="o">,</span> <span class="nc">HttpServletResponse</span> <span class="n">response</span><span class="o">,</span> <span class="nc">Authentication</span> <span class="n">authentication</span><span class="o">)</span> <span class="kd">throws</span> <span class="nc">IOException</span><span class="o">,</span> <span class="nc">ServletException</span> <span class="o">{</span>
+        <span class="nc">CustomOAuth2User</span> <span class="n">customOAuth2User</span> <span class="o">=</span> <span class="o">(</span><span class="nc">CustomOAuth2User</span><span class="o">)</span> <span class="n">authentication</span><span class="o">.</span><span class="na">getPrincipal</span><span class="o">();</span>
+        <span class="nc">String</span> <span class="n">provider</span> <span class="o">=</span> <span class="n">customOAuth2User</span><span class="o">.</span><span class="na">getUser</span><span class="o">().</span><span class="na">getProvider</span><span class="o">();</span>
+<span class="c1">//        String email = getEmailByProvider(provider, customOAuth2User);</span>
+
+        <span class="nc">User</span> <span class="n">user</span> <span class="o">=</span> <span class="n">userRepository</span><span class="o">.</span><span class="na">findById</span><span class="o">(</span><span class="n">customOAuth2User</span><span class="o">.</span><span class="na">getUser</span><span class="o">().</span><span class="na">getId</span><span class="o">())</span>
+                <span class="o">.</span><span class="na">orElseThrow</span><span class="o">(</span><span class="nl">EntityNotFoundException:</span><span class="o">:</span><span class="k">new</span><span class="o">);</span>
+
+        <span class="k">if</span> <span class="o">(</span><span class="n">response</span><span class="o">.</span><span class="na">isCommitted</span><span class="o">())</span> <span class="o">{</span>
+            <span class="n">log</span><span class="o">.</span><span class="na">info</span><span class="o">(</span><span class="s">"============================================================================"</span><span class="o">);</span>
+            <span class="n">log</span><span class="o">.</span><span class="na">info</span><span class="o">(</span><span class="s">"Social login response has been successfully sent."</span><span class="o">);</span>
+            <span class="n">log</span><span class="o">.</span><span class="na">info</span><span class="o">(</span><span class="s">"============================================================================"</span><span class="o">);</span>
+        <span class="o">}</span>
+
+        <span class="n">log</span><span class="o">.</span><span class="na">info</span><span class="o">(</span><span class="s">"============================================================================"</span><span class="o">);</span>
+        <span class="n">log</span><span class="o">.</span><span class="na">info</span><span class="o">(</span><span class="s">"Social login successful. Social type is {}"</span><span class="o">,</span> <span class="n">provider</span><span class="o">);</span>
+        <span class="n">log</span><span class="o">.</span><span class="na">info</span><span class="o">(</span><span class="s">"============================================================================"</span><span class="o">);</span>
+
+        <span class="nc">String</span> <span class="n">accessToken</span> <span class="o">=</span> <span class="n">tokenGenerator</span><span class="o">.</span><span class="na">generateToken</span><span class="o">(</span><span class="nc">TokenType</span><span class="o">.</span><span class="na">ACCESS</span><span class="o">,</span> <span class="nc">String</span><span class="o">.</span><span class="na">valueOf</span><span class="o">(</span><span class="n">user</span><span class="o">.</span><span class="na">getId</span><span class="o">()));</span>
+        <span class="nc">String</span> <span class="n">refreshToken</span> <span class="o">=</span> <span class="n">tokenGenerator</span><span class="o">.</span><span class="na">generateToken</span><span class="o">(</span><span class="nc">TokenType</span><span class="o">.</span><span class="na">REFRESH</span><span class="o">,</span> <span class="nc">String</span><span class="o">.</span><span class="na">valueOf</span><span class="o">(</span><span class="n">user</span><span class="o">.</span><span class="na">getId</span><span class="o">()));</span>
+
+        <span class="n">response</span><span class="o">.</span><span class="na">setHeader</span><span class="o">(</span><span class="s">"Authorization"</span><span class="o">,</span> <span class="s">"Bearer "</span> <span class="o">+</span> <span class="n">accessToken</span><span class="o">);</span>
+        <span class="n">cookieUtil</span><span class="o">.</span><span class="na">setCookie</span><span class="o">(</span><span class="s">"refreshToken"</span><span class="o">,</span> <span class="n">refreshToken</span><span class="o">,</span> <span class="n">response</span><span class="o">);</span>
+        <span class="n">redisUtil</span><span class="o">.</span><span class="na">setData</span><span class="o">(</span><span class="nc">String</span><span class="o">.</span><span class="na">valueOf</span><span class="o">(</span><span class="n">user</span><span class="o">.</span><span class="na">getId</span><span class="o">()),</span> <span class="n">refreshToken</span><span class="o">);</span>
+
+        <span class="nc">UserInfoResponse</span> <span class="n">userInfoResponse</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">UserInfoResponse</span><span class="o">(</span>
+                <span class="n">user</span><span class="o">.</span><span class="na">getId</span><span class="o">(),</span>
+                <span class="n">user</span><span class="o">.</span><span class="na">getNickname</span><span class="o">(),</span>
+                <span class="n">user</span><span class="o">.</span><span class="na">getUserTag</span><span class="o">(),</span>
+                <span class="n">user</span><span class="o">.</span><span class="na">getBirthday</span><span class="o">(),</span>
+                <span class="n">user</span><span class="o">.</span><span class="na">getEmail</span><span class="o">(),</span>
+                <span class="n">user</span><span class="o">.</span><span class="na">getProfile</span><span class="o">().</span><span class="na">getProfileImageUrl</span><span class="o">(),</span>
+                <span class="n">isBirthdayToday</span><span class="o">(</span><span class="n">user</span><span class="o">.</span><span class="na">getBirthday</span><span class="o">()),</span>
+                <span class="n">user</span><span class="o">.</span><span class="na">getSex</span><span class="o">()</span>
+        <span class="o">);</span>
+
+        <span class="nc">String</span> <span class="n">frontendRedirectUrl</span> <span class="o">=</span> <span class="n">setRedirectUrl</span><span class="o">(</span><span class="n">userInfoResponse</span><span class="o">,</span> <span class="n">accessToken</span><span class="o">);</span>
+
+        <span class="n">response</span><span class="o">.</span><span class="na">sendRedirect</span><span class="o">(</span><span class="n">frontendRedirectUrl</span><span class="o">);</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="nc">String</span> <span class="nf">setRedirectUrl</span> <span class="o">(</span><span class="nc">UserInfoResponse</span> <span class="n">userInfoResponse</span><span class="o">,</span> <span class="nc">String</span> <span class="n">accessToken</span><span class="o">)</span> <span class="o">{</span>
+        <span class="nc">String</span> <span class="n">encodedUserId</span> <span class="o">=</span> <span class="nc">URLEncoder</span><span class="o">.</span><span class="na">encode</span><span class="o">(</span><span class="nc">String</span><span class="o">.</span><span class="na">valueOf</span><span class="o">(</span><span class="n">userInfoResponse</span><span class="o">.</span><span class="na">userId</span><span class="o">()),</span> <span class="nc">StandardCharsets</span><span class="o">.</span><span class="na">UTF_8</span><span class="o">);</span>
+        <span class="nc">String</span> <span class="n">encodedNickname</span> <span class="o">=</span> <span class="nc">URLEncoder</span><span class="o">.</span><span class="na">encode</span><span class="o">(</span><span class="nc">String</span><span class="o">.</span><span class="na">valueOf</span><span class="o">(</span><span class="n">userInfoResponse</span><span class="o">.</span><span class="na">nickname</span><span class="o">()),</span> <span class="nc">StandardCharsets</span><span class="o">.</span><span class="na">UTF_8</span><span class="o">);</span>
+        <span class="nc">String</span> <span class="n">encodedUserTag</span> <span class="o">=</span> <span class="nc">URLEncoder</span><span class="o">.</span><span class="na">encode</span><span class="o">(</span><span class="nc">String</span><span class="o">.</span><span class="na">valueOf</span><span class="o">(</span><span class="n">userInfoResponse</span><span class="o">.</span><span class="na">userTag</span><span class="o">()),</span> <span class="nc">StandardCharsets</span><span class="o">.</span><span class="na">UTF_8</span><span class="o">);</span>
+        <span class="nc">String</span> <span class="n">encodedBirthday</span> <span class="o">=</span> <span class="nc">URLEncoder</span><span class="o">.</span><span class="na">encode</span><span class="o">(</span><span class="nc">String</span><span class="o">.</span><span class="na">valueOf</span><span class="o">(</span><span class="n">userInfoResponse</span><span class="o">.</span><span class="na">birthday</span><span class="o">()),</span> <span class="nc">StandardCharsets</span><span class="o">.</span><span class="na">UTF_8</span><span class="o">);</span>
+        <span class="nc">String</span> <span class="n">encodedEmail</span> <span class="o">=</span> <span class="nc">URLEncoder</span><span class="o">.</span><span class="na">encode</span><span class="o">(</span><span class="nc">String</span><span class="o">.</span><span class="na">valueOf</span><span class="o">(</span><span class="n">userInfoResponse</span><span class="o">.</span><span class="na">email</span><span class="o">()),</span> <span class="nc">StandardCharsets</span><span class="o">.</span><span class="na">UTF_8</span><span class="o">);</span>
+        <span class="nc">String</span> <span class="n">encodedProfileImgUrl</span> <span class="o">=</span> <span class="nc">URLEncoder</span><span class="o">.</span><span class="na">encode</span><span class="o">(</span><span class="nc">String</span><span class="o">.</span><span class="na">valueOf</span><span class="o">(</span><span class="n">userInfoResponse</span><span class="o">.</span><span class="na">profileImgUrl</span><span class="o">()),</span> <span class="nc">StandardCharsets</span><span class="o">.</span><span class="na">UTF_8</span><span class="o">);</span>
+        <span class="nc">String</span> <span class="n">encodedIsBirthDay</span> <span class="o">=</span> <span class="nc">URLEncoder</span><span class="o">.</span><span class="na">encode</span><span class="o">(</span><span class="nc">String</span><span class="o">.</span><span class="na">valueOf</span><span class="o">(</span><span class="n">userInfoResponse</span><span class="o">.</span><span class="na">isBirthday</span><span class="o">()));</span>
+        <span class="nc">String</span> <span class="n">encodedSex</span> <span class="o">=</span> <span class="nc">URLEncoder</span><span class="o">.</span><span class="na">encode</span><span class="o">(</span><span class="nc">String</span><span class="o">.</span><span class="na">valueOf</span><span class="o">(</span><span class="n">userInfoResponse</span><span class="o">.</span><span class="na">sex</span><span class="o">()));</span>
+
+        <span class="nc">String</span> <span class="n">frontendRedirectUrl</span> <span class="o">=</span> <span class="nc">String</span><span class="o">.</span><span class="na">format</span><span class="o">(</span>
+                <span class="s">"%s/oauth/callback?token=%s&amp;userId=%s&amp;nickname=%s&amp;userTag=%s&amp;birthday=%s&amp;email=%s&amp;profileImgUrl=%s&amp;isBirthday=%s&amp;sex=%s"</span><span class="o">,</span>
+                <span class="no">PRE_FRONT_REDIRECT_URL</span><span class="o">,</span>
+                <span class="s">"Bearer "</span> <span class="o">+</span> <span class="n">accessToken</span><span class="o">,</span>
+                <span class="n">encodedUserId</span><span class="o">,</span>
+                <span class="n">encodedNickname</span><span class="o">,</span>
+                <span class="n">encodedUserTag</span><span class="o">,</span>
+                <span class="n">encodedBirthday</span><span class="o">,</span>
+                <span class="n">encodedEmail</span><span class="o">,</span>
+                <span class="n">encodedProfileImgUrl</span><span class="o">,</span>
+                <span class="n">encodedIsBirthDay</span><span class="o">,</span>
+                <span class="n">encodedSex</span>
+        <span class="o">);</span>
+
+        <span class="k">return</span> <span class="n">frontendRedirectUrl</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="kd">private</span> <span class="kt">boolean</span> <span class="nf">isBirthdayToday</span><span class="o">(</span><span class="nc">LocalDate</span> <span class="n">birthday</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="n">birthday</span> <span class="o">!=</span> <span class="kc">null</span> <span class="o">&amp;&amp;</span> <span class="n">birthday</span><span class="o">.</span><span class="na">getMonth</span><span class="o">()</span> <span class="o">==</span> <span class="nc">LocalDate</span><span class="o">.</span><span class="na">now</span><span class="o">().</span><span class="na">getMonth</span><span class="o">()</span> <span class="o">&amp;&amp;</span>
+                <span class="n">birthday</span><span class="o">.</span><span class="na">getDayOfMonth</span><span class="o">()</span> <span class="o">==</span> <span class="nc">LocalDate</span><span class="o">.</span><span class="na">now</span><span class="o">().</span><span class="na">getDayOfMonth</span><span class="o">();</span>
+    <span class="o">}</span>
 <span class="o">}</span>
 </pre></td></tr></tbody></table></code></div></div>
-
-<p>위와 같은 메서드를 사용한다면 <em>userRepository.findById(id).get()</em> 을 사용하여 데이터베이스에서 <strong>User</strong> 엔터티를 다시 가져옵니다. 때문에 <em>LazyInitializationException</em> 문제를 회피할 수 있습니다. 이로 인해 지연 로드된 속성에 접근이 가능합니다.</p>
-
 
   </div>
 
@@ -1099,7 +1464,14 @@
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/default-handler-exception-resolver/">DefaultHandlerExceptionResolver</a>
+          <a href="/posts/deploy-project-free-using-vercel-and-ngrok/">vercel, ngrok 을 사용하여 무료로 프로젝트 배포하기</a>
+        </li>
+      
+        
+        
+        
+        <li class="text-truncate lh-lg">
+          <a href="/posts/map-service-using-google-map-api/">google map api 를 사용한 지도 검색과 지도 생성</a>
         </li>
       
         
@@ -1107,13 +1479,6 @@
         
         <li class="text-truncate lh-lg">
           <a href="/posts/lazy-initialization-exception/">LazyInitializationException 과 SecurityContextHolder</a>
-        </li>
-      
-        
-        
-        
-        <li class="text-truncate lh-lg">
-          <a href="/posts/class-cast-exception/">ClassCastException - 왜 Optional 을 사용할 수 없을까?</a>
         </li>
       
     </ul>
@@ -1152,25 +1517,6 @@
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -1210,75 +1556,6 @@
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
   
     
     
@@ -1303,10 +1580,31 @@
     
     
     
-      
-        
-        
-
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
   
     
     
@@ -1318,24 +1616,6 @@
     
     
     
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
     
   
     
@@ -1371,7 +1651,30 @@
     
     
     
-      
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
     
   
     
@@ -1405,7 +1708,540 @@
     
     
     
+  
+    
+    
+    
+    
       
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
     
   
     
@@ -1426,28 +2262,31 @@
         <a class="post-tag" href="/tags/exception/">exception</a>
       
         
-        <a class="post-tag" href="/tags/security/">security</a>
-      
-        
         <a class="post-tag" href="/tags/github-actions/">github actions</a>
       
         
-        <a class="post-tag" href="/tags/jwt/">JWT</a>
+        <a class="post-tag" href="/tags/security/">security</a>
       
         
         <a class="post-tag" href="/tags/%EC%9E%90%EB%8F%99%EB%B0%B0%ED%8F%AC/">자동배포</a>
       
         
-        <a class="post-tag" href="/tags/cloud/">cloud</a>
+        <a class="post-tag" href="/tags/docker/">docker</a>
       
         
-        <a class="post-tag" href="/tags/cool-sms/">cool-sms</a>
+        <a class="post-tag" href="/tags/stomp/">stomp</a>
+      
+        
+        <a class="post-tag" href="/tags/websocket/">websocket</a>
+      
+        
+        <a class="post-tag" href="/tags/%ED%98%91%EC%97%85/">협업</a>
+      
+        
+        <a class="post-tag" href="/tags/jwt/">JWT</a>
       
         
         <a class="post-tag" href="/tags/spring-boot-3/">spring boot 3</a>
-      
-        
-        <a class="post-tag" href="/tags/vue-js/">vue.js</a>
       
     </div>
   </section>
@@ -1588,6 +2427,18 @@
   
 
   
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
     
   
 
@@ -1601,6 +2452,82 @@
 
   
 
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
 
 
 
@@ -1714,21 +2641,21 @@
 
   
     <a
-      href="/posts/class-cast-exception/"
+      href="/posts/servlet-http-and-server-http/"
       class="btn"
       aria-label="Older"
     >
-      <p>ClassCastException - 왜 Optional 을 사용할 수 없을까?</p>
+      <p>동기와 비동기 그리고 ServletHttp~ 와 ServerHttp~ 의 차이 알아보기</p>
     </a>
   
 
   
     <a
-      href="/posts/default-handler-exception-resolver/"
+      href="/posts/map-service-using-google-map-api/"
       class="btn"
       aria-label="Newer"
     >
-      <p>DefaultHandlerExceptionResolver</p>
+      <p>google map api 를 사용한 지도 검색과 지도 생성</p>
     </a>
   
 </nav>
@@ -1748,7 +2675,7 @@
     <time>2025</time>
 
     
-      <a href="https://github.com/sieunnnn">SIEUNKIM</a>.
+      <a href="https://github.com/sieunnnn">김자바</a>.
     
 
     
@@ -1810,25 +2737,6 @@
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -1868,75 +2776,6 @@
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
   
     
     
@@ -1961,10 +2800,31 @@
     
     
     
-      
-        
-        
-
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
   
     
     
@@ -1976,24 +2836,6 @@
     
     
     
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
     
   
     
@@ -2029,7 +2871,30 @@
     
     
     
-      
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
     
   
     
@@ -2063,7 +2928,540 @@
     
     
     
+  
+    
+    
+    
+    
       
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
     
   
     
@@ -2084,28 +3482,31 @@
         <a class="post-tag" href="/tags/exception/">exception</a>
       
         
-        <a class="post-tag" href="/tags/security/">security</a>
-      
-        
         <a class="post-tag" href="/tags/github-actions/">github actions</a>
       
         
-        <a class="post-tag" href="/tags/jwt/">JWT</a>
+        <a class="post-tag" href="/tags/security/">security</a>
       
         
         <a class="post-tag" href="/tags/%EC%9E%90%EB%8F%99%EB%B0%B0%ED%8F%AC/">자동배포</a>
       
         
-        <a class="post-tag" href="/tags/cloud/">cloud</a>
+        <a class="post-tag" href="/tags/docker/">docker</a>
       
         
-        <a class="post-tag" href="/tags/cool-sms/">cool-sms</a>
+        <a class="post-tag" href="/tags/stomp/">stomp</a>
+      
+        
+        <a class="post-tag" href="/tags/websocket/">websocket</a>
+      
+        
+        <a class="post-tag" href="/tags/%ED%98%91%EC%97%85/">협업</a>
+      
+        
+        <a class="post-tag" href="/tags/jwt/">JWT</a>
       
         
         <a class="post-tag" href="/tags/spring-boot-3/">spring boot 3</a>
-      
-        
-        <a class="post-tag" href="/tags/vue-js/">vue.js</a>
       
     </div>
   </section>

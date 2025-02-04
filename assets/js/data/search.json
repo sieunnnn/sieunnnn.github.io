@@ -4,7 +4,7 @@
     "url": "/posts/2024-04-18-setter-builder-jackson/",
     "categories": "",
     "tags": "",
-    "date": "2025-02-04 01:18:12 +0900",
+    "date": "2025-02-04 14:11:43 +0900",
     "content": "1. 문제의 시작 @Setter 를 지우고 빌더 패턴을 적용하면서 아래와 같은 에러들이 발생하였습니다.  org.springframework.messaging.converter.MessageConversionException: Could not read JSON: Cannot construct instance of travelplanner.projec..."
   },
   {
@@ -12,8 +12,120 @@
     "url": "/posts/2023-09-17-send-find-password-mail/",
     "categories": "",
     "tags": "",
-    "date": "2025-02-04 01:18:12 +0900",
+    "date": "2025-02-04 14:11:43 +0900",
     "content": "1. 비밀번호를 잊어버린 유저는 어떻게 해야 하나요?  일반적으로 메일로 임시 비밀번호를 발급해줍니다.  하지만 임시 비밀번호를 발급받게 된다면, 저희팀 프로젝트 비밀번호 변경 프로세스상 로그인을 하고 프로필에 들어가서 임시비밀번호를 입력하고 새 비밀번호로 교체 해야합니다. 그러면 유저입장에서는 너무 귀찮겠죠.  그래서 비밀번호를 변경할 수 있는 ur..."
+  },
+  {
+    "title": "vercel, ngrok 을 사용하여 무료로 프로젝트 배포하기",
+    "url": "/posts/deploy-project-free-using-vercel-and-ngrok/",
+    "categories": "Deploy, Project",
+    "tags": "vercel, ngrok, deploy",
+    "date": "2024-08-22 12:33:00 +0900",
+    "content": "일정기간 간단하게 배포 하는데 돈을 들이고 싶지 않다면 이글을 참고해보세요."
+  },
+  {
+    "title": "google map api 를 사용한 지도 검색과 지도 생성",
+    "url": "/posts/map-service-using-google-map-api/",
+    "categories": "Vue.js",
+    "tags": "map, google service, vue.js",
+    "date": "2024-07-15 12:33:00 +0900",
+    "content": "서비스에 위치 검색과 동적지도를 넣는 방법을 알려드려요."
+  },
+  {
+    "title": "LazyInitializationException 과 SecurityContextHolder",
+    "url": "/posts/lazy-initialization-exception/",
+    "categories": "Spring boot, Exception",
+    "tags": "exception",
+    "date": "2024-06-24 12:33:00 +0900",
+    "content": "이전과 다른이유로 또 마주친 LazyInitializationException. @EAGER 을 사용하지 않고 해결해보자."
+  },
+  {
+    "title": "동기와 비동기 그리고 ServletHttp~ 와 ServerHttp~ 의 차이 알아보기",
+    "url": "/posts/servlet-http-and-server-http/",
+    "categories": "Spring boot, Websocket",
+    "tags": "websocket, stomp",
+    "date": "2024-06-19 12:33:00 +0900",
+    "content": "동기와 비동기, 그리고 이번에 알게된 ServerHttp~ 에 대해 알려드려요."
+  },
+  {
+    "title": "websocket stomp 테스터 만들기 with sock.js",
+    "url": "/posts/websocket-tester/",
+    "categories": "Spring boot, Websocket",
+    "tags": "websocket, stomp",
+    "date": "2024-05-29 12:33:00 +0900",
+    "content": "내 환경에 맞으면서 프로젝트 인증방식에 맞는 websocket 테스터가 없었다. 그래서 만들었다."
+  },
+  {
+    "title": "OAuth2.0 프로토콜을 사용한 SSO 구현기 - 코드 생산성을 높이자!",
+    "url": "/posts/oauth2.0-protocol/",
+    "categories": "로그인, SSO",
+    "tags": "oauth2.0, 로그인, sso",
+    "date": "2024-05-29 12:33:00 +0900",
+    "content": "SSO 를 이해하고 OAuth2.0 을 이용하여 여러 소셜 로그인을 한번에 구현해요."
+  },
+  {
+    "title": "메일 서비스 만들기 with Google SMTP",
+    "url": "/posts/mail-service/",
+    "categories": "Spring boot, SMTP",
+    "tags": "spring boot 3, thymeleaf",
+    "date": "2024-05-29 12:33:00 +0900",
+    "content": "구글 SMTP 를 사용하여 메일 서비스를 만들어보자."
+  },
+  {
+    "title": "Stomp 를 사용하여 실시간 서비스 개발하기",
+    "url": "/posts/realtime-service-with-stomp/",
+    "categories": "Spring boot, Websocket",
+    "tags": "websocket, stomp",
+    "date": "2024-05-23 12:33:00 +0900",
+    "content": "실시간 서비스에서 security 는 어떻게 적용해야 할까? 에 대한 고민을 담은 글입니다."
+  },
+  {
+    "title": "Github Actions 를 사용하여 Image build, push 자동화 시 유의해야 할 보안 문제",
+    "url": "/posts/watch-out-when-using-github-actions/",
+    "categories": "Deploy, Github Actions",
+    "tags": "github actions, 자동배포",
+    "date": "2024-04-21 12:33:00 +0900",
+    "content": "내가 채택한 방식이 항상 최선일까? 의심을 하고 또 의심을 해야한다. 특히 보안에 관해서는."
+  },
+  {
+    "title": "단위테스트 작성하기 with @WebMvcTest",
+    "url": "/posts/test-code-with-web-mvc-test/",
+    "categories": "Spring boot, Test",
+    "tags": "test, 협업",
+    "date": "2024-04-21 12:33:00 +0900",
+    "content": "Spring Rest Docs 를 작성하려면 테스트 코드를 작성할 줄 알아야합니다. 따라서 이곳에서는 기본적인 테스트 코드 작성법을 기술합니다."
+  },
+  {
+    "title": "Record 와 DTO",
+    "url": "/posts/record-and-dto/",
+    "categories": "Spring boot",
+    "tags": "data-binding",
+    "date": "2024-04-19 12:33:00 +0900",
+    "content": "자바 버전을 올렸는데 Record 가 생겼어요."
+  },
+  {
+    "title": "Github Actions 을 이용한 프로젝트 자동배포",
+    "url": "/posts/image-build-push-automatically-with-github-actions/",
+    "categories": "Deploy, Github Actions",
+    "tags": "github actions, 자동배포, docker",
+    "date": "2024-04-19 12:33:00 +0900",
+    "content": "개발자는 게을러야 성공한다는 말이 있다. 그래서 난 게을러지기로 했다."
+  },
+  {
+    "title": "Docker 를 사용하여 front 팀과 협업하기",
+    "url": "/posts/cooperation-with-front-team-using-docker/",
+    "categories": "Deploy, Docker",
+    "tags": "docker, 협업",
+    "date": "2024-04-18 12:33:00 +0900",
+    "content": "운영도 안하는데 돈을 쓰는건 너무 아깝잖아요. docker 를 사용해봅시다."
+  },
+  {
+    "title": "Docker 를 사용하여 backend 팀과 협업하기",
+    "url": "/posts/cooperation-with-backend-team-using-docker/",
+    "categories": "Deploy, Docker",
+    "tags": "docker, 협업",
+    "date": "2024-04-18 12:33:00 +0900",
+    "content": "프로젝트가 처음인 팀원의 환경 구축시간을 줄이고, 공통된 환경을 만들고 싶다면 docker 를 사용해보세요."
   },
   {
     "title": "DefaultHandlerExceptionResolver",
@@ -114,9 +226,9 @@
   {
     "title": "Cool SMS 로 문자 인증 구현하기",
     "url": "/posts/cool-sms/",
-    "categories": "spring boot",
+    "categories": "Spring boot",
     "tags": "cool-sms",
-    "date": "2023-03-18 12:33:00 +0900",
+    "date": "2023-04-19 12:33:00 +0900",
     "content": "문자 인증을 구현해보고 싶은데, 사업자 등록을 하지 않았다면? cool SMS 를 사용해보세요."
   }
   
