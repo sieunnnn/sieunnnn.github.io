@@ -4,7 +4,7 @@
     "url": "/posts/2024-04-18-setter-builder-jackson/",
     "categories": "",
     "tags": "",
-    "date": "2025-02-04 14:11:43 +0900",
+    "date": "2025-02-05 15:10:36 +0900",
     "content": "1. 문제의 시작 @Setter 를 지우고 빌더 패턴을 적용하면서 아래와 같은 에러들이 발생하였습니다.  org.springframework.messaging.converter.MessageConversionException: Could not read JSON: Cannot construct instance of travelplanner.projec..."
   },
   {
@@ -12,7 +12,7 @@
     "url": "/posts/2023-09-17-send-find-password-mail/",
     "categories": "",
     "tags": "",
-    "date": "2025-02-04 14:11:43 +0900",
+    "date": "2025-02-05 15:10:36 +0900",
     "content": "1. 비밀번호를 잊어버린 유저는 어떻게 해야 하나요?  일반적으로 메일로 임시 비밀번호를 발급해줍니다.  하지만 임시 비밀번호를 발급받게 된다면, 저희팀 프로젝트 비밀번호 변경 프로세스상 로그인을 하고 프로필에 들어가서 임시비밀번호를 입력하고 새 비밀번호로 교체 해야합니다. 그러면 유저입장에서는 너무 귀찮겠죠.  그래서 비밀번호를 변경할 수 있는 ur..."
   },
   {
@@ -26,7 +26,7 @@
   {
     "title": "google map api 를 사용한 지도 검색과 지도 생성",
     "url": "/posts/map-service-using-google-map-api/",
-    "categories": "Vue.js",
+    "categories": "Frontend, Vue.js",
     "tags": "map, google service, vue.js",
     "date": "2024-07-15 12:33:00 +0900",
     "content": "서비스에 위치 검색과 동적지도를 넣는 방법을 알려드려요."
@@ -110,6 +110,14 @@
     "tags": "github actions, 자동배포, docker",
     "date": "2024-04-19 12:33:00 +0900",
     "content": "개발자는 게을러야 성공한다는 말이 있다. 그래서 난 게을러지기로 했다."
+  },
+  {
+    "title": "Cool SMS 로 문자 인증 구현하기",
+    "url": "/posts/cool-sms/",
+    "categories": "Spring boot",
+    "tags": "cool-sms",
+    "date": "2024-04-19 12:33:00 +0900",
+    "content": "문자 인증을 구현해보고 싶은데, 사업자 등록을 하지 않았다면? cool SMS 를 사용해보세요."
   },
   {
     "title": "Docker 를 사용하여 front 팀과 협업하기",
@@ -224,12 +232,60 @@
     "content": "form login 방식으로 로그인을 하는 방법을 알아보자."
   },
   {
-    "title": "Cool SMS 로 문자 인증 구현하기",
-    "url": "/posts/cool-sms/",
-    "categories": "Spring boot",
-    "tags": "cool-sms",
-    "date": "2023-04-19 12:33:00 +0900",
-    "content": "문자 인증을 구현해보고 싶은데, 사업자 등록을 하지 않았다면? cool SMS 를 사용해보세요."
+    "title": "기본 클래스 \" \" 을(를) 찾거나 로드할 수 없습니다.",
+    "url": "/posts/basic-class-not-found/",
+    "categories": "IntelliJ, Exception",
+    "tags": "exception",
+    "date": "2023-04-13 12:33:00 +0900",
+    "content": "인텔리제이에서 프로젝트 실행시 종종 발생하는 오류입니다."
+  },
+  {
+    "title": "Public Key Retrieval is not allowed",
+    "url": "/posts/public-key-retrival-is-not-allow/",
+    "categories": "DB, Exception",
+    "tags": "exception",
+    "date": "2023-04-09 12:33:00 +0900",
+    "content": "MySQL 비밀번호를 다시한번 확인해보세요."
+  },
+  {
+    "title": "Property or filed '' cannot be found on null",
+    "url": "/posts/property-or-field-cannot-be-found-on-null/",
+    "categories": "Frontend, Thymeleaf",
+    "tags": "exception",
+    "date": "2023-04-03 12:33:00 +0900",
+    "content": "여러가지 원인이 있지만 이곳에서는 두가지를 소개해 드릴게요."
+  },
+  {
+    "title": "th:each 와 버튼",
+    "url": "/posts/th-eath-button/",
+    "categories": "Frontend, Thymeleaf",
+    "tags": "javascript",
+    "date": "2023-03-31 12:33:00 +0900",
+    "content": "반복적인 요소를 생성했는데, 첫번째 요소에만 javascript 가 정상 동작 한다면?"
+  },
+  {
+    "title": "Uncaught Reference Error",
+    "url": "/posts/uncaught-reference-error/",
+    "categories": "Frontend, Thymeleaf",
+    "tags": "exception",
+    "date": "2023-03-28 12:33:00 +0900",
+    "content": "제이쿼리를 쓴다면서 왜 추가를 안한거야 바보같은 나."
+  },
+  {
+    "title": "X-Frame-Options",
+    "url": "/posts/x-fram-options/",
+    "categories": "Spring boot, Security",
+    "tags": "exception",
+    "date": "2023-03-21 12:33:00 +0900",
+    "content": "security 버전이 올라가면서 생기는 변화로 인한 문제. Click jacking 은 무엇일까?"
+  },
+  {
+    "title": "html 한글 깨짐 현상",
+    "url": "/posts/html-korean/",
+    "categories": "Frontend, HTML",
+    "tags": "exception, encoding",
+    "date": "2023-02-21 12:33:00 +0900",
+    "content": "나는 분명 한글을 작성했는데 왜 외계어가 나타나나요."
   }
   
 ]
