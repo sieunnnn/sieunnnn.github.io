@@ -4,7 +4,7 @@
     "url": "/posts/2024-04-18-setter-builder-jackson/",
     "categories": "",
     "tags": "",
-    "date": "2025-02-07 11:00:49 +0900",
+    "date": "2025-02-07 11:39:15 +0900",
     "content": "1. 문제의 시작 @Setter 를 지우고 빌더 패턴을 적용하면서 아래와 같은 에러들이 발생하였습니다.  org.springframework.messaging.converter.MessageConversionException: Could not read JSON: Cannot construct instance of travelplanner.projec..."
   },
   {
@@ -12,7 +12,7 @@
     "url": "/posts/2023-09-17-send-find-password-mail/",
     "categories": "",
     "tags": "",
-    "date": "2025-02-07 11:00:49 +0900",
+    "date": "2025-02-07 11:39:15 +0900",
     "content": "1. 비밀번호를 잊어버린 유저는 어떻게 해야 하나요?  일반적으로 메일로 임시 비밀번호를 발급해줍니다.  하지만 임시 비밀번호를 발급받게 된다면, 저희팀 프로젝트 비밀번호 변경 프로세스상 로그인을 하고 프로필에 들어가서 임시비밀번호를 입력하고 새 비밀번호로 교체 해야합니다. 그러면 유저입장에서는 너무 귀찮겠죠.  그래서 비밀번호를 변경할 수 있는 ur..."
   },
   {
